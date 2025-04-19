@@ -1,0 +1,34 @@
+# Compilación
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# Configuración de usuario
+*.user
+*.suo
+*.cache
+*.log
+
+# Archivos de VS
+.vscode/
+*.sln.docstates
+
+# Paquetes NuGet
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+
+# Publicación
+publish/
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Archivos del sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
