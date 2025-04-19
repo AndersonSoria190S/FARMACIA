@@ -101,5 +101,16 @@ namespace FARMACIA.Formularios.Productos
         {
             this.Close();
         }
+
+        private void frmMantProducto_Load(object sender, EventArgs e)
+        {
+            if (_modo_editar)
+            {
+                txtcodigo.Text = _Producto.Codigo;
+                txtproducto.Text = _Producto.Descripcion;
+                txtcategoria.Text = _Producto.Categoria;
+                txtmedida.Text = _Producto.Medida;
+            }
+        }
     }
 }

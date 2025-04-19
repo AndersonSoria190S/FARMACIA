@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btncargamasiva = new FontAwesome.Sharp.IconButton();
             btnnuevacompra = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -36,11 +37,32 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(btncargamasiva);
             panel1.Controls.Add(btnnuevacompra);
             panel1.Location = new Point(9, 9);
             panel1.Name = "panel1";
             panel1.Size = new Size(305, 296);
             panel1.TabIndex = 0;
+            // 
+            // btncargamasiva
+            // 
+            btncargamasiva.BackColor = Color.FromArgb(0, 143, 213);
+            btncargamasiva.Cursor = Cursors.Hand;
+            btncargamasiva.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btncargamasiva.ForeColor = Color.White;
+            btncargamasiva.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            btncargamasiva.IconColor = Color.White;
+            btncargamasiva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btncargamasiva.ImageAlign = ContentAlignment.MiddleLeft;
+            btncargamasiva.Location = new Point(21, 87);
+            btncargamasiva.Name = "btncargamasiva";
+            btncargamasiva.Padding = new Padding(60, 3, 0, 0);
+            btncargamasiva.Size = new Size(262, 55);
+            btncargamasiva.TabIndex = 3;
+            btncargamasiva.Text = "Carga Masiva";
+            btncargamasiva.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btncargamasiva.UseVisualStyleBackColor = false;
+            btncargamasiva.Click += iconButton1_Click;
             // 
             // btnnuevacompra
             // 
@@ -71,6 +93,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "IProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "IProductos";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -80,5 +103,6 @@
 
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnnuevacompra;
+        private FontAwesome.Sharp.IconButton btncargamasiva;
     }
 }

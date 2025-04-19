@@ -28,5 +28,10 @@ namespace FARMACIA.Formularios.Intermedios
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

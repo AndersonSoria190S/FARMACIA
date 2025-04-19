@@ -195,6 +195,7 @@
             Name = "frmMantProducto";
             StartPosition = FormStartPosition.CenterParent;
             Text = ".: Detalle Producto :.";
+            Load += frmMantProducto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

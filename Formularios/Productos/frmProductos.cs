@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using FARMACIA.Herramientas;
+using FARMACIA.Modelo;
+using FARMACIA.Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClosedXML.Excel;
-using FARMACIA.Formularios.Intermedios;
-using FARMACIA.Herramientas;
-using FARMACIA.Modelo;
-using FARMACIA.Logica;
+
 namespace FARMACIA.Formularios.Productos
 {
     public partial class frmProductos : Form
@@ -150,6 +150,142 @@ namespace FARMACIA.Formularios.Productos
                     btnnuevoproducto.Focus();
                 }
             }
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btneliminar")
+            {
+
+                if (index >= 0)
+                {
+                    if (MessageBox.Show("¿Desea eliminar el producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string mensaje = string.Empty;
+                        int id = int.Parse(dgvdata.Rows[index].Cells["Id"].Value.ToString());
+                        int respuesta = ProductoLogica.Instancia.Eliminar(id);
+                        if (respuesta > 0)
+                        {
+                            dgvdata.Rows.RemoveAt(index);
+                        }
+                        else
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                }
+            }
+            else if (dgvdata.Columns[e.ColumnIndex].Name == "btneditar")
+            {
+                if (index >= 0)
+                {
+                    Producto objeto = new Producto()
+                    {
+                        IdProducto = int.Parse(dgvdata.Rows[index].Cells["Id"].Value.ToString()),
+                        Codigo = dgvdata.Rows[index].Cells["Codigo"].Value.ToString(),
+                        Descripcion = dgvdata.Rows[index].Cells["Producto"].Value.ToString(),
+                        Categoria = dgvdata.Rows[index].Cells["Categoria"].Value.ToString(),
+                        Medida = dgvdata.Rows[index].Cells["Medida"].Value.ToString(),
+                    };
+
+                    using (var form = new frmMantProducto())
+                    {
+                        form._modo_editar = true;
+                        form._Producto = objeto;
+                        var result = form.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            dgvdata.Rows[index].Cells["Id"].Value = form._Producto.IdProducto;
+                            dgvdata.Rows[index].Cells["Codigo"].Value = form._Producto.Codigo;
+                            dgvdata.Rows[index].Cells["Producto"].Value = form._Producto.Descripcion;
+                            dgvdata.Rows[index].Cells["Categoria"].Value = form._Producto.Categoria;
+                            dgvdata.Rows[index].Cells["Medida"].Value = form._Producto.Medida;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 8)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.edit16.Width;
+                var h = Properties.Resources.edit16.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.edit16, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+            if (e.ColumnIndex == 9)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.delete16.Width;
+                var h = Properties.Resources.delete16.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.delete16, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            dgvdata.EndEdit(); // <-- Solución
+
+            string columnaFiltro = ((OpcionCombo)cbobuscar.SelectedItem).Valor.ToString();
+
+            if (dgvdata.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (!row.IsNewRow) // <-- Evita afectar la fila nueva (vacía)
+                    {
+                        var cellValue = row.Cells[columnaFiltro].Value?.ToString() ?? "";
+                        if (cellValue.Trim().ToUpper().Contains(txtbuscar.Text.Trim().ToUpper()))
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            txtbuscar.Text = "";
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+            dgvdata.ClearSelection();
+        }
+
+        private void cbobuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
