@@ -49,8 +49,8 @@
             PrecioCompra = new DataGridViewTextBoxColumn();
             PrecioVenta = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
-            btneditar = new DataGridViewTextBoxColumn();
-            btneliminar = new DataGridViewTextBoxColumn();
+            btneditar = new DataGridViewButtonColumn();
+            btneliminar = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
@@ -62,7 +62,7 @@
             panel1.Controls.Add(Usuarios);
             panel1.Location = new Point(-3, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1082, 41);
+            panel1.Size = new Size(1035, 41);
             panel1.TabIndex = 0;
             // 
             // btnsalir
@@ -71,15 +71,16 @@
             btnsalir.ForeColor = SystemColors.ControlLightLight;
             btnsalir.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             btnsalir.IconColor = Color.White;
-            btnsalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnsalir.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnsalir.IconSize = 24;
-            btnsalir.Location = new Point(1000, 3);
+            btnsalir.Location = new Point(949, 2);
             btnsalir.Name = "btnsalir";
             btnsalir.Size = new Size(69, 31);
             btnsalir.TabIndex = 211;
             btnsalir.Text = "Salir";
             btnsalir.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnsalir.UseVisualStyleBackColor = false;
+            btnsalir.Click += btnsalir_Click;
             // 
             // Usuarios
             // 
@@ -123,13 +124,14 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 18;
-            iconButton1.Location = new Point(1029, 124);
+            iconButton1.Location = new Point(978, 157);
             iconButton1.Margin = new Padding(1);
             iconButton1.Name = "iconButton1";
             iconButton1.Padding = new Padding(0, 3, 0, 0);
             iconButton1.Size = new Size(37, 23);
             iconButton1.TabIndex = 15;
             iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
             // 
             // label2
             // 
@@ -144,7 +146,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(622, 127);
+            label1.Location = new Point(571, 160);
             label1.Name = "label1";
             label1.Size = new Size(69, 15);
             label1.TabIndex = 13;
@@ -154,31 +156,36 @@
             // 
             cbobuscar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbobuscar.FormattingEnabled = true;
-            cbobuscar.Location = new Point(707, 124);
+            cbobuscar.Location = new Point(656, 157);
             cbobuscar.Name = "cbobuscar";
             cbobuscar.Size = new Size(121, 23);
             cbobuscar.TabIndex = 12;
+            cbobuscar.SelectedIndexChanged += cbobuscar_SelectedIndexChanged;
             // 
             // txtbuscar
             // 
-            txtbuscar.Location = new Point(837, 124);
+            txtbuscar.Location = new Point(786, 157);
             txtbuscar.Name = "txtbuscar";
             txtbuscar.Size = new Size(129, 23);
             txtbuscar.TabIndex = 11;
             // 
             // btnbuscar
             // 
+            btnbuscar.BackColor = Color.WhiteSmoke;
+            btnbuscar.FlatStyle = FlatStyle.Popup;
             btnbuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
             btnbuscar.IconColor = Color.Black;
             btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscar.IconSize = 18;
-            btnbuscar.Location = new Point(979, 124);
+            btnbuscar.Location = new Point(928, 157);
             btnbuscar.Margin = new Padding(1);
             btnbuscar.Name = "btnbuscar";
             btnbuscar.Padding = new Padding(0, 3, 0, 0);
             btnbuscar.Size = new Size(37, 23);
             btnbuscar.TabIndex = 10;
-            btnbuscar.UseVisualStyleBackColor = true;
+            btnbuscar.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnbuscar.UseVisualStyleBackColor = false;
+            btnbuscar.Click += btnbuscar_Click;
             // 
             // btnexportar
             // 
@@ -202,14 +209,18 @@
             // 
             // dgvdata
             // 
+            dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = Color.White;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Codigo, Producto, Categoria, Medida, PrecioCompra, PrecioVenta, Stock, btneditar, btneliminar });
             dgvdata.Location = new Point(12, 199);
             dgvdata.Name = "dgvdata";
             dgvdata.RowTemplate.Height = 25;
-            dgvdata.Size = new Size(1049, 352);
+            dgvdata.Size = new Size(1003, 352);
             dgvdata.TabIndex = 194;
+            dgvdata.CellClick += dgvdata_CellClick;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
+            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // Id
             // 
@@ -275,7 +286,7 @@
             // 
             btneditar.HeaderText = "";
             btneditar.Name = "btneditar";
-            btneditar.SortMode = DataGridViewColumnSortMode.NotSortable;
+            btneditar.Resizable = DataGridViewTriState.True;
             btneditar.Width = 35;
             // 
             // btneliminar
@@ -283,7 +294,6 @@
             btneliminar.HeaderText = "";
             btneliminar.Name = "btneliminar";
             btneliminar.Resizable = DataGridViewTriState.False;
-            btneliminar.SortMode = DataGridViewColumnSortMode.NotSortable;
             btneliminar.Width = 35;
             // 
             // frmProductos
@@ -291,7 +301,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1078, 563);
+            ClientSize = new Size(1030, 563);
             Controls.Add(dgvdata);
             Controls.Add(btnexportar);
             Controls.Add(iconButton1);
@@ -338,7 +348,7 @@
         private DataGridViewTextBoxColumn PrecioCompra;
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Stock;
-        private DataGridViewTextBoxColumn btneditar;
-        private DataGridViewTextBoxColumn btneliminar;
+        private DataGridViewButtonColumn btneditar;
+        private DataGridViewButtonColumn btneliminar;
     }
 }
