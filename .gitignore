@@ -32,3 +32,6 @@ publish/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+# Carpeta interna de Visual Studio
+.vs/
+
