@@ -62,18 +62,19 @@
             panel1.Controls.Add(Usuarios);
             panel1.Location = new Point(-3, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1035, 41);
+            panel1.Size = new Size(1035, 45);
             panel1.TabIndex = 0;
             // 
             // btnsalir
             // 
             btnsalir.BackColor = Color.FromArgb(0, 143, 213);
+            btnsalir.FlatStyle = FlatStyle.Flat;
             btnsalir.ForeColor = SystemColors.ControlLightLight;
             btnsalir.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             btnsalir.IconColor = Color.White;
             btnsalir.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnsalir.IconSize = 24;
-            btnsalir.Location = new Point(949, 2);
+            btnsalir.Location = new Point(952, 8);
             btnsalir.Name = "btnsalir";
             btnsalir.Size = new Size(69, 31);
             btnsalir.TabIndex = 211;
@@ -189,17 +190,18 @@
             // 
             // btnexportar
             // 
+            btnexportar.BackColor = SystemColors.Control;
             btnexportar.Cursor = Cursors.Hand;
             btnexportar.FlatStyle = FlatStyle.Popup;
-            btnexportar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnexportar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnexportar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            btnexportar.IconColor = Color.LimeGreen;
+            btnexportar.IconColor = Color.ForestGreen;
             btnexportar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnexportar.IconSize = 17;
             btnexportar.ImageAlign = ContentAlignment.TopCenter;
             btnexportar.Location = new Point(12, 157);
             btnexportar.Name = "btnexportar";
-            btnexportar.Size = new Size(127, 27);
+            btnexportar.Size = new Size(127, 21);
             btnexportar.TabIndex = 193;
             btnexportar.Text = "Descargar Excel";
             btnexportar.TextAlign = ContentAlignment.MiddleRight;

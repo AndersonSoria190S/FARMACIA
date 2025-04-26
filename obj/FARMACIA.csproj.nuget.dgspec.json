@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[5.15.3, )"
             },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.7.3, )"
+            },
             "System.Data.SQLite": {
               "target": "Package",
               "version": "[1.0.119, )"

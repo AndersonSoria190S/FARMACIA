@@ -31,7 +31,10 @@ namespace FARMACIA.Formularios.Intermedios
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            
+
+            FormularioVista = new frmCargaMasiva();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

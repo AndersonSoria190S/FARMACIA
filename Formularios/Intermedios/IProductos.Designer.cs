@@ -31,12 +31,14 @@
             panel1 = new Panel();
             btncargamasiva = new FontAwesome.Sharp.IconButton();
             btnnuevacompra = new FontAwesome.Sharp.IconButton();
+            btngenerarbarras = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(btngenerarbarras);
             panel1.Controls.Add(btncargamasiva);
             panel1.Controls.Add(btnnuevacompra);
             panel1.Location = new Point(9, 9);
@@ -84,6 +86,25 @@
             btnnuevacompra.UseVisualStyleBackColor = false;
             btnnuevacompra.Click += btnnuevacompra_Click;
             // 
+            // btngenerarbarras
+            // 
+            btngenerarbarras.BackColor = Color.FromArgb(0, 143, 213);
+            btngenerarbarras.Cursor = Cursors.Hand;
+            btngenerarbarras.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btngenerarbarras.ForeColor = Color.White;
+            btngenerarbarras.IconChar = FontAwesome.Sharp.IconChar.Barcode;
+            btngenerarbarras.IconColor = Color.White;
+            btngenerarbarras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btngenerarbarras.ImageAlign = ContentAlignment.MiddleLeft;
+            btngenerarbarras.Location = new Point(21, 148);
+            btngenerarbarras.Name = "btngenerarbarras";
+            btngenerarbarras.Padding = new Padding(60, 3, 0, 0);
+            btngenerarbarras.Size = new Size(262, 55);
+            btngenerarbarras.TabIndex = 4;
+            btngenerarbarras.Text = "Generar Barras";
+            btngenerarbarras.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btngenerarbarras.UseVisualStyleBackColor = false;
+            // 
             // IProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -104,5 +125,6 @@
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnnuevacompra;
         private FontAwesome.Sharp.IconButton btncargamasiva;
+        private FontAwesome.Sharp.IconButton btngenerarbarras;
     }
 }
