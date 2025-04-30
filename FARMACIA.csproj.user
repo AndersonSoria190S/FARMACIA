@@ -16,6 +16,9 @@
     <Compile Update="Formularios\Mantenimiento\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Modales\mdProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Productos\frmCargaMasiva.cs">
       <SubType>Form</SubType>
     </Compile>

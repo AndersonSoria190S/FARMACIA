@@ -36,5 +36,17 @@ namespace FARMACIA.Formularios.Intermedios
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void btngenerarbarras_Click(object sender, EventArgs e)
+        {
+            FormularioVista = new frmGenerarBarras();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
