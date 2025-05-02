@@ -1,3 +1,5 @@
+﻿using FARMACIA.Logica;
+using FARMACIA.Modelo;
 ﻿using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using FARMACIA.Modelo;
