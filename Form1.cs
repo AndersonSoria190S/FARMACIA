@@ -1,12 +1,6 @@
 using FARMACIA.Logica;
 using FARMACIA.Modelo;
-
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
 
 namespace FARMACIA
 {
@@ -102,5 +96,9 @@ namespace FARMACIA
             }
         }
 
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

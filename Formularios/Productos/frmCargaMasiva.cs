@@ -1,19 +1,9 @@
 ﻿using FARMACIA.Logica;
 using FARMACIA.Modelo;
-﻿using NPOI.SS.UserModel;
+using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using FARMACIA.Modelo;
-using FARMACIA.Logica;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 
 namespace FARMACIA.Formularios.Productos
@@ -300,6 +290,16 @@ namespace FARMACIA.Formularios.Productos
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblresumen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

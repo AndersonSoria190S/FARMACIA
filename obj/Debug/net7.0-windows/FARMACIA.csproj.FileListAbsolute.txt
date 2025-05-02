@@ -138,3 +138,6 @@ C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\ref\FARMACIA.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\BarcodeLib.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\itextsharp.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdProductos.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\ReaLTaiizor.dll
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Proveedores.frmMantProveedor.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Proveedores.frmProveedores.resources

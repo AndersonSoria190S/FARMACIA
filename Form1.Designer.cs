@@ -66,13 +66,13 @@
             // button1
             // 
             button1.BackgroundImage = Properties.Resources._288131666_5152367421513190_7345227237005028619_n;
-            button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.Window;
             button1.Location = new Point(339, 213);
             button1.Name = "button1";
             button1.Size = new Size(128, 36);
             button1.TabIndex = 2;
-            button1.Text = "Insertar";
+            button1.Text = "Ingresar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -125,12 +125,13 @@
             txtclave.Name = "txtclave";
             txtclave.Size = new Size(277, 23);
             txtclave.TabIndex = 7;
+            txtclave.UseSystemPasswordChar = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(656, 314);
             Controls.Add(txtclave);
             Controls.Add(label2);

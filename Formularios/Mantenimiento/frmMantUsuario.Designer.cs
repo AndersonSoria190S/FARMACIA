@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantUsuario));
             txtusuario = new TextBox();
             txtnombre = new TextBox();
             txtconfirmarclave = new TextBox();
@@ -86,7 +85,7 @@
             // 
             // panel1
             // 
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackColor = Color.FromArgb(0, 143, 213);
             panel1.Controls.Add(Usuarios);
             panel1.Location = new Point(-6, 0);
             panel1.Name = "panel1";
@@ -96,7 +95,7 @@
             // Usuarios
             // 
             Usuarios.AutoSize = true;
-            Usuarios.BackColor = Color.FromArgb(5, 177, 234);
+            Usuarios.BackColor = Color.FromArgb(0, 143, 213);
             Usuarios.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             Usuarios.ForeColor = SystemColors.ButtonHighlight;
             Usuarios.Location = new Point(66, 9);

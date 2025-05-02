@@ -33,6 +33,7 @@
             btnnuevacompra = new FontAwesome.Sharp.IconButton();
             btnbuscarcompra = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -69,7 +70,7 @@
             btnbuscarcompra.IconColor = Color.White;
             btnbuscarcompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscarcompra.ImageAlign = ContentAlignment.MiddleLeft;
-            btnbuscarcompra.Location = new Point(31, 88);
+            btnbuscarcompra.Location = new Point(31, 78);
             btnbuscarcompra.Name = "btnbuscarcompra";
             btnbuscarcompra.Padding = new Padding(60, 3, 0, 0);
             btnbuscarcompra.Size = new Size(237, 50);
@@ -81,19 +82,39 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(btnbuscarcompra);
             panel1.Controls.Add(btnnuevacompra);
             panel1.Location = new Point(9, 9);
             panel1.Name = "panel1";
-            panel1.Size = new Size(305, 296);
+            panel1.Size = new Size(305, 201);
             panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(0, 143, 213);
+            iconButton1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iconButton1.ForeColor = Color.White;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(31, 134);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(60, 3, 0, 0);
+            iconButton1.Size = new Size(237, 50);
+            iconButton1.TabIndex = 3;
+            iconButton1.Text = "Cerrar";
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click_1;
             // 
             // IMantenimiento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(322, 314);
+            ClientSize = new Size(322, 216);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "IMantenimiento";
@@ -111,5 +132,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private FontAwesome.Sharp.IconButton btnbuscarcompra;
         private Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

@@ -1,14 +1,6 @@
 ﻿using FARMACIA.Formularios.Intermedios;
+using FARMACIA.Formularios.Proveedores;
 using FARMACIA.Intermedios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FARMACIA
 {
@@ -39,8 +31,8 @@ namespace FARMACIA
             }
             if (oPermisos.Compras == 0)
             {
-                menuCompras.Enabled = false;
-                menuCompras.Cursor = Cursors.No;
+                menuReportes.Enabled = false;
+                menuReportes.Cursor = Cursors.No;
             }
             if (oPermisos.Productos == 0)
             {
@@ -54,8 +46,8 @@ namespace FARMACIA
             }
             if (oPermisos.Proveedores == 0)
             {
-                menuProveedores.Enabled = false;
-                menuProveedores.Cursor = Cursors.No;
+                menuCompras.Enabled = false;
+                menuCompras.Cursor = Cursors.No;
             }
 
             if (oPermisos.Mantenimiento == 0)
@@ -120,6 +112,14 @@ namespace FARMACIA
                     FormularioVista.FormClosing += Frm_Closing;
                 }
             }
+        }
+
+        private void menuProveedores_Click(object sender, EventArgs e)
+        {
+            frmProveedores FormularioVista = new frmProveedores();
+            this.Hide();
+            FormularioVista.Show();
+            FormularioVista.FormClosing += Frm_Closing;
         }
     }
 }

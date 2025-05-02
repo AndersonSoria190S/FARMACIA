@@ -1,16 +1,8 @@
 ﻿using ClosedXML.Excel;
 using FARMACIA.Herramientas;
-using FARMACIA.Modelo;
 using FARMACIA.Logica;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using FARMACIA.Modelo;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FARMACIA.Formularios.Productos
 {

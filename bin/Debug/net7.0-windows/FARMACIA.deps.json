@@ -13,6 +13,7 @@
           "FontAwesome": "4.7.0",
           "FontAwesome.Sharp": "5.15.3",
           "NPOI": "2.7.3",
+          "ReaLTaiizor": "3.8.1.2",
           "System.Data.SQLite": "1.0.119",
           "iTextSharp": "5.5.13.4"
         },
@@ -210,6 +211,14 @@
           "lib/netstandard2.0/RBush.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "ReaLTaiizor/3.8.1.2": {
+        "runtime": {
+          "lib/net7.0-windows7.0/ReaLTaiizor.dll": {
+            "assemblyVersion": "3.8.1.2",
+            "fileVersion": "3.8.1.2"
           }
         }
       },
@@ -593,6 +602,13 @@
       "sha512": "sha512-j3GeRxxLUQdc+UrZnvythdQxi3bd8ayn87VDjfGXrvfodF550n9wR6SgQvpo+YiAv3GJezsu6lK0l47rRqnbdg==",
       "path": "rbush/4.0.0",
       "hashPath": "rbush.4.0.0.nupkg.sha512"
+    },
+    "ReaLTaiizor/3.8.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sbGxNe+9boFNoEp1FqP6P9BjJTRMJzWnfUT6+0jl8MajTo/xDYGIQF61OL/5Fw/k+tRxbMgtarQOr0CwFdSlTw==",
+      "path": "realtaiizor/3.8.1.2",
+      "hashPath": "realtaiizor.3.8.1.2.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",

@@ -1,14 +1,4 @@
-﻿using FARMACIA.Modelo;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using FARMACIA.Formularios.Mantenimiento;
+﻿using FARMACIA.Formularios.Mantenimiento;
 
 namespace FARMACIA.Intermedios
 {
@@ -38,6 +28,16 @@ namespace FARMACIA.Intermedios
             FormularioVista = new frmPermisos();
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -304,6 +304,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1030, 563);
+            ControlBox = false;
             Controls.Add(dgvdata);
             Controls.Add(btnexportar);
             Controls.Add(iconButton1);

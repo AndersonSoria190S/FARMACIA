@@ -38,10 +38,11 @@
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             menuClientes = new FontAwesome.Sharp.IconButton();
-            menuProveedores = new FontAwesome.Sharp.IconButton();
             menuCompras = new FontAwesome.Sharp.IconButton();
+            menuReportes = new FontAwesome.Sharp.IconButton();
             menuVentas = new FontAwesome.Sharp.IconButton();
             menuProductos = new FontAwesome.Sharp.IconButton();
+            menuProveedores = new FontAwesome.Sharp.IconButton();
             statusStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -53,7 +54,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, lblstatus1, toolStripStatusLabel3, lblstatus2 });
             statusStrip1.Location = new Point(0, 460);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(652, 25);
+            statusStrip1.Size = new Size(725, 25);
             statusStrip1.TabIndex = 11;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -88,6 +89,7 @@
             // menuMantenimiento
             // 
             menuMantenimiento.BackColor = Color.FromArgb(0, 143, 213);
+            menuMantenimiento.FlatStyle = FlatStyle.Flat;
             menuMantenimiento.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             menuMantenimiento.ForeColor = SystemColors.ControlLightLight;
             menuMantenimiento.IconChar = FontAwesome.Sharp.IconChar.Cogs;
@@ -95,7 +97,7 @@
             menuMantenimiento.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuMantenimiento.IconSize = 80;
             menuMantenimiento.ImageAlign = ContentAlignment.TopCenter;
-            menuMantenimiento.Location = new Point(480, 291);
+            menuMantenimiento.Location = new Point(475, 291);
             menuMantenimiento.Margin = new Padding(1);
             menuMantenimiento.Name = "menuMantenimiento";
             menuMantenimiento.Size = new Size(117, 91);
@@ -110,20 +112,21 @@
             panel1.BackColor = Color.FromArgb(0, 143, 213);
             panel1.Controls.Add(iconButton2);
             panel1.Controls.Add(iconButton1);
-            panel1.Location = new Point(0, -1);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(652, 104);
+            panel1.Size = new Size(746, 78);
             panel1.TabIndex = 4;
             // 
             // iconButton2
             // 
             iconButton2.BackColor = Color.FromArgb(0, 143, 213);
+            iconButton2.FlatStyle = FlatStyle.Popup;
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             iconButton2.IconColor = Color.White;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 50;
             iconButton2.ImageAlign = ContentAlignment.TopCenter;
-            iconButton2.Location = new Point(587, 13);
+            iconButton2.Location = new Point(660, 12);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(53, 53);
             iconButton2.TabIndex = 5;
@@ -133,12 +136,14 @@
             // iconButton1
             // 
             iconButton1.BackColor = Color.FromArgb(0, 143, 213);
+            iconButton1.FlatStyle = FlatStyle.Popup;
+            iconButton1.ForeColor = SystemColors.ActiveCaption;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 50;
             iconButton1.ImageAlign = ContentAlignment.TopCenter;
-            iconButton1.Location = new Point(528, 13);
+            iconButton1.Location = new Point(601, 12);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(53, 53);
             iconButton1.TabIndex = 4;
@@ -147,6 +152,7 @@
             // menuClientes
             // 
             menuClientes.BackColor = Color.FromArgb(0, 143, 213);
+            menuClientes.FlatStyle = FlatStyle.Flat;
             menuClientes.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             menuClientes.ForeColor = SystemColors.ControlLightLight;
             menuClientes.IconChar = FontAwesome.Sharp.IconChar.Users;
@@ -154,56 +160,59 @@
             menuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuClientes.IconSize = 80;
             menuClientes.ImageAlign = ContentAlignment.TopCenter;
-            menuClientes.Location = new Point(268, 150);
+            menuClientes.Location = new Point(213, 150);
             menuClientes.Margin = new Padding(1);
             menuClientes.Name = "menuClientes";
             menuClientes.Size = new Size(117, 91);
             menuClientes.TabIndex = 12;
-            menuClientes.Text = "Mantenimiento";
+            menuClientes.Text = "Clientes";
             menuClientes.TextAlign = ContentAlignment.BottomCenter;
             menuClientes.UseVisualStyleBackColor = false;
-            // 
-            // menuProveedores
-            // 
-            menuProveedores.BackColor = Color.FromArgb(0, 143, 213);
-            menuProveedores.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            menuProveedores.ForeColor = SystemColors.ControlLightLight;
-            menuProveedores.IconChar = FontAwesome.Sharp.IconChar.TruckLoading;
-            menuProveedores.IconColor = Color.White;
-            menuProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            menuProveedores.IconSize = 80;
-            menuProveedores.ImageAlign = ContentAlignment.TopCenter;
-            menuProveedores.Location = new Point(480, 150);
-            menuProveedores.Margin = new Padding(1);
-            menuProveedores.Name = "menuProveedores";
-            menuProveedores.Size = new Size(117, 91);
-            menuProveedores.TabIndex = 13;
-            menuProveedores.Text = "Proveedores";
-            menuProveedores.TextAlign = ContentAlignment.BottomCenter;
-            menuProveedores.UseVisualStyleBackColor = false;
             // 
             // menuCompras
             // 
             menuCompras.BackColor = Color.FromArgb(0, 143, 213);
+            menuCompras.FlatStyle = FlatStyle.Flat;
             menuCompras.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             menuCompras.ForeColor = SystemColors.ControlLightLight;
-            menuCompras.IconChar = FontAwesome.Sharp.IconChar.Trello;
+            menuCompras.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             menuCompras.IconColor = Color.White;
             menuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            menuCompras.IconSize = 70;
+            menuCompras.IconSize = 80;
             menuCompras.ImageAlign = ContentAlignment.TopCenter;
-            menuCompras.Location = new Point(268, 291);
+            menuCompras.Location = new Point(384, 150);
             menuCompras.Margin = new Padding(1);
             menuCompras.Name = "menuCompras";
             menuCompras.Size = new Size(117, 91);
-            menuCompras.TabIndex = 16;
-            menuCompras.Text = "Reportes";
+            menuCompras.TabIndex = 13;
+            menuCompras.Text = "Compras";
             menuCompras.TextAlign = ContentAlignment.BottomCenter;
             menuCompras.UseVisualStyleBackColor = false;
+            // 
+            // menuReportes
+            // 
+            menuReportes.BackColor = Color.FromArgb(0, 143, 213);
+            menuReportes.FlatStyle = FlatStyle.Flat;
+            menuReportes.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            menuReportes.ForeColor = SystemColors.ControlLightLight;
+            menuReportes.IconChar = FontAwesome.Sharp.IconChar.Trello;
+            menuReportes.IconColor = Color.White;
+            menuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menuReportes.IconSize = 70;
+            menuReportes.ImageAlign = ContentAlignment.TopCenter;
+            menuReportes.Location = new Point(297, 291);
+            menuReportes.Margin = new Padding(1);
+            menuReportes.Name = "menuReportes";
+            menuReportes.Size = new Size(117, 91);
+            menuReportes.TabIndex = 16;
+            menuReportes.Text = "Reportes";
+            menuReportes.TextAlign = ContentAlignment.BottomCenter;
+            menuReportes.UseVisualStyleBackColor = false;
             // 
             // menuVentas
             // 
             menuVentas.BackColor = Color.FromArgb(0, 143, 213);
+            menuVentas.FlatStyle = FlatStyle.Flat;
             menuVentas.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             menuVentas.ForeColor = SystemColors.ControlLightLight;
             menuVentas.IconChar = FontAwesome.Sharp.IconChar.Tags;
@@ -223,6 +232,7 @@
             // menuProductos
             // 
             menuProductos.BackColor = Color.FromArgb(0, 143, 213);
+            menuProductos.FlatStyle = FlatStyle.Flat;
             menuProductos.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             menuProductos.ForeColor = SystemColors.ControlLightLight;
             menuProductos.IconChar = FontAwesome.Sharp.IconChar.FirstAid;
@@ -230,7 +240,7 @@
             menuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuProductos.IconSize = 70;
             menuProductos.ImageAlign = ContentAlignment.TopCenter;
-            menuProductos.Location = new Point(50, 291);
+            menuProductos.Location = new Point(129, 291);
             menuProductos.Margin = new Padding(1);
             menuProductos.Name = "menuProductos";
             menuProductos.Size = new Size(117, 91);
@@ -240,23 +250,46 @@
             menuProductos.UseVisualStyleBackColor = false;
             menuProductos.Click += menuProductos_Click;
             // 
+            // menuProveedores
+            // 
+            menuProveedores.BackColor = Color.FromArgb(0, 143, 213);
+            menuProveedores.FlatStyle = FlatStyle.Flat;
+            menuProveedores.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            menuProveedores.ForeColor = SystemColors.ControlLightLight;
+            menuProveedores.IconChar = FontAwesome.Sharp.IconChar.Trello;
+            menuProveedores.IconColor = Color.White;
+            menuProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            menuProveedores.IconSize = 70;
+            menuProveedores.ImageAlign = ContentAlignment.TopCenter;
+            menuProveedores.Location = new Point(549, 150);
+            menuProveedores.Margin = new Padding(1);
+            menuProveedores.Name = "menuProveedores";
+            menuProveedores.Size = new Size(117, 91);
+            menuProveedores.TabIndex = 17;
+            menuProveedores.Text = "Proveedores";
+            menuProveedores.TextAlign = ContentAlignment.BottomCenter;
+            menuProveedores.UseVisualStyleBackColor = false;
+            menuProveedores.Click += menuProveedores_Click;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(652, 485);
-            Controls.Add(menuCompras);
+            ClientSize = new Size(725, 485);
+            Controls.Add(menuProveedores);
+            Controls.Add(menuReportes);
             Controls.Add(menuVentas);
             Controls.Add(menuProductos);
-            Controls.Add(menuProveedores);
+            Controls.Add(menuCompras);
             Controls.Add(menuClientes);
             Controls.Add(panel1);
             Controls.Add(menuMantenimiento);
             Controls.Add(statusStrip1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Inicio";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inicio";
+            Text = ".: Inicio :.";
             Load += Inicio_Load;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -277,9 +310,10 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton menuClientes;
-        private FontAwesome.Sharp.IconButton menuProveedores;
         private FontAwesome.Sharp.IconButton menuCompras;
+        private FontAwesome.Sharp.IconButton menuReportes;
         private FontAwesome.Sharp.IconButton menuVentas;
         private FontAwesome.Sharp.IconButton menuProductos;
+        private FontAwesome.Sharp.IconButton menuProveedores;
     }
 }

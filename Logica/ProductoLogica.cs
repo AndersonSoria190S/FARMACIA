@@ -1,11 +1,6 @@
-﻿using FARMACIA.Formularios.Intermedios;
-using System;
-using System.Collections.Generic;
+﻿using FARMACIA.Modelo;
 using System.Data.SQLite;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using FARMACIA.Modelo;
 
 namespace FARMACIA.Logica
 {

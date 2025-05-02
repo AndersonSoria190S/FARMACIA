@@ -75,7 +75,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(5, 177, 234);
+            panel1.BackColor = Color.FromArgb(0, 143, 213);
             panel1.Controls.Add(btnsalir);
             panel1.Controls.Add(Usuarios);
             panel1.Location = new Point(-6, -1);
@@ -85,7 +85,7 @@
             // 
             // btnsalir
             // 
-            btnsalir.BackColor = Color.FromArgb(5, 177, 234);
+            btnsalir.BackColor = Color.FromArgb(0, 143, 213);
             btnsalir.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnsalir.ForeColor = SystemColors.ControlLightLight;
             btnsalir.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
@@ -506,7 +506,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmPermisos";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Permisos :.";
             Load += frmPermisos_Load;
             panel1.ResumeLayout(false);

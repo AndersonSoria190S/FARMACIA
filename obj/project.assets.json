@@ -334,6 +334,22 @@
           }
         }
       },
+      "ReaLTaiizor/3.8.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-windows7.0/ReaLTaiizor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/ReaLTaiizor.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -1378,6 +1394,36 @@
         "readme.md"
       ]
     },
+    "ReaLTaiizor/3.8.1.2": {
+      "sha512": "sbGxNe+9boFNoEp1FqP6P9BjJTRMJzWnfUT6+0jl8MajTo/xDYGIQF61OL/5Fw/k+tRxbMgtarQOr0CwFdSlTw==",
+      "type": "package",
+      "path": "realtaiizor/3.8.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.MD",
+        "Taiizor.png",
+        "lib/net10.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net10.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net48/ReaLTaiizor.dll",
+        "lib/net48/ReaLTaiizor.xml",
+        "lib/net481/ReaLTaiizor.dll",
+        "lib/net481/ReaLTaiizor.xml",
+        "lib/net6.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net6.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net7.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net7.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net8.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net8.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net9.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net9.0-windows7.0/ReaLTaiizor.xml",
+        "lib/netcoreapp3.1/ReaLTaiizor.dll",
+        "lib/netcoreapp3.1/ReaLTaiizor.xml",
+        "realtaiizor.3.8.1.2.nupkg.sha512",
+        "realtaiizor.nuspec"
+      ]
+    },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "sha512": "9kyFSIdN3T0qjDQ2R0HRXYIhS3l5psBzQi6qqhdLz+SzFyEy4sVxNOke+yyYv8Cu8rPER12c3RDjLT8wF3WBYQ==",
       "type": "package",
@@ -2240,6 +2286,7 @@
       "FontAwesome >= 4.7.0",
       "FontAwesome.Sharp >= 5.15.3",
       "NPOI >= 2.7.3",
+      "ReaLTaiizor >= 3.8.1.2",
       "System.Data.SQLite >= 1.0.119",
       "iTextSharp >= 5.5.13.4"
     ]
@@ -2302,6 +2349,10 @@
           "NPOI": {
             "target": "Package",
             "version": "[2.7.3, )"
+          },
+          "ReaLTaiizor": {
+            "target": "Package",
+            "version": "[3.8.1.2, )"
           },
           "System.Data.SQLite": {
             "target": "Package",

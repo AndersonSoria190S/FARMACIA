@@ -43,11 +43,11 @@
             btndescargar = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
             dgvdata = new DataGridView();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             NroFila = new DataGridViewTextBoxColumn();
             Codigo = new DataGridViewTextBoxColumn();
             Mensaje = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
@@ -116,6 +116,7 @@
             groupBox1.Size = new Size(734, 15);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // label1
             // 
@@ -200,6 +201,7 @@
             lblresumen.Size = new Size(35, 13);
             lblresumen.TabIndex = 145;
             lblresumen.Text = "label3";
+            lblresumen.Click += lblresumen_Click;
             // 
             // btndescargar
             // 
@@ -244,13 +246,6 @@
             dgvdata.Size = new Size(749, 352);
             dgvdata.TabIndex = 195;
             // 
-            // backgroundWorker1
-            // 
-            backgroundWorker1.WorkerReportsProgress = true;
-            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
-            backgroundWorker1.ProgressChanged += backgroundWorker1_ProgressChanged;
-            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
-            // 
             // NroFila
             // 
             NroFila.HeaderText = "Nro. Fila";
@@ -284,6 +279,13 @@
             Estado.SortMode = DataGridViewColumnSortMode.NotSortable;
             Estado.Width = 135;
             // 
+            // backgroundWorker1
+            // 
+            backgroundWorker1.WorkerReportsProgress = true;
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            backgroundWorker1.ProgressChanged += backgroundWorker1_ProgressChanged;
+            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
+            // 
             // frmCargaMasiva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,7 +307,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmCargaMasiva";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Carga Masiva :.";
             Load += frmCargaMasiva_Load;
             panel1.ResumeLayout(false);

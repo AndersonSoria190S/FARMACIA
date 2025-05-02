@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0wrhSs2FhBTpTPfFOgx922JgH0mSqmUj+xFdNhe73Elc+dRPNk97DbhXgoSys+hMLvxMbFqYdkoEBwV++D0B6g==",
+  "dgSpecHash": "kDm6iLZPjp6TQdKTIzQuRrUR1a7QKtNgNreoBI4Cz6WVBm32tL5eRWSh8+kWb39LLB5YJ6/Op0n9RdIX5ItWEA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Desktop\\FARMAC\\FARMACIA\\FARMACIA.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\npoi\\2.7.3\\npoi.2.7.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\rbush\\4.0.0\\rbush.4.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\realtaiizor\\3.8.1.2\\realtaiizor.3.8.1.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
