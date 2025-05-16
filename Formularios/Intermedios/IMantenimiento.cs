@@ -39,5 +39,12 @@ namespace FARMACIA.Intermedios
         {
 
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            FormularioVista = new frmNegocio();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

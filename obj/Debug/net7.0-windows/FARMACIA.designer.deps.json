@@ -130,6 +130,17 @@
           }
         }
       },
+      "itextsharp.xmlworker/5.5.13.2": {
+        "dependencies": {
+          "iTextSharp": "5.5.13.4"
+        },
+        "runtime": {
+          "lib/itextsharp.xmlworker.dll": {
+            "assemblyVersion": "5.5.13.2",
+            "fileVersion": "5.5.13.2"
+          }
+        }
+      },
       "MathNet.Numerics.Signed/5.0.0": {
         "runtime": {
           "lib/net6.0/MathNet.Numerics.dll": {
@@ -691,6 +702,13 @@
       "sha512": "sha512-/cvCNv8AJ+XuD99u4NfHSSxkBJKTdvP36wcfQF9V1Cjzi1ycyFSa4vJ64a3DhFVUTKVO60WF8OmAqngQDTHgYA==",
       "path": "itextsharp/5.5.13.4",
       "hashPath": "itextsharp.5.5.13.4.nupkg.sha512"
+    },
+    "itextsharp.xmlworker/5.5.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GvvabJF8Rpy9NdIMqBT9DtEQUeLnIQjFIwH7xb9whe6xxEG77lZTQOEhe5HQjalTX4WxhBaOR9ffCq0cqjn7Fw==",
+      "path": "itextsharp.xmlworker/5.5.13.2",
+      "hashPath": "itextsharp.xmlworker.5.5.13.2.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",

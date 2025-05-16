@@ -141,3 +141,11 @@ C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formular
 C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\ReaLTaiizor.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Proveedores.frmMantProveedor.resources
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Proveedores.frmProveedores.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Compras.frmBuscarCompra.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Compras.frmListaCompras.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Compras.frmNuevaCompra.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Intermedios.ICompras.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdCompraExistosa.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdProveedores.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\itextsharp.xmlworker.dll
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Mantenimiento.frmNegocio.resources

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kDm6iLZPjp6TQdKTIzQuRrUR1a7QKtNgNreoBI4Cz6WVBm32tL5eRWSh8+kWb39LLB5YJ6/Op0n9RdIX5ItWEA==",
+  "dgSpecHash": "xnTlgfehh3kKdcGGc3/GUUskhnrm4WIPwQHgMDmOZfD0pPx4W+AJMK1h9U1V1RU7mxwnxUHIkN1ks3UDr3DMww==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Desktop\\FARMAC\\FARMACIA\\FARMACIA.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\fontawesome.sharp\\5.15.3\\fontawesome.sharp.5.15.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\itextsharp\\5.5.13.4\\itextsharp.5.5.13.4.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\itextsharp.xmlworker\\5.5.13.2\\itextsharp.xmlworker.5.5.13.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\mathnet.numerics.signed\\5.0.0\\mathnet.numerics.signed.5.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
@@ -71,6 +72,16 @@
       "warningLevel": 1,
       "message": "El paquete \"iTextSharp 5.5.13.4\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"itextsharp.xmlworker 5.5.13.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "itextsharp.xmlworker",
       "targetGraphs": [
         "net7.0-windows7.0"
       ]

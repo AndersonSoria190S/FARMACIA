@@ -131,6 +131,38 @@ namespace FARMACIA.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Web Page Design&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///            table.border th {
+        ///                text-align: center;
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///
+        ///            table.border td {
+        ///                text-align: center;
+        ///                padding: 5px;
+        ///                border: 1px solid black;
+        ///            }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;table border=&quot;0&quot; style=&quot;wi [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        public static string PlantillaCompra {
+            get {
+                return ResourceManager.GetString("PlantillaCompra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
         public static byte[] PlantillaProducto {

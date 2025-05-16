@@ -4,10 +4,25 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Compras\frmBuscarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Compras\frmListaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Compras\frmNuevaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Intermedios\ICompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Intermedios\IProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Mantenimiento\frmMantUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Mantenimiento\frmNegocio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Mantenimiento\frmPermisos.cs">
@@ -16,7 +31,13 @@
     <Compile Update="Formularios\Mantenimiento\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Modales\mdCompraExistosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Modales\mdProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Modales\mdProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Productos\frmCargaMasiva.cs">

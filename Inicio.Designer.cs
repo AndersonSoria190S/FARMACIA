@@ -188,6 +188,7 @@
             menuCompras.Text = "Compras";
             menuCompras.TextAlign = ContentAlignment.BottomCenter;
             menuCompras.UseVisualStyleBackColor = false;
+            menuCompras.Click += menuCompras_Click;
             // 
             // menuReportes
             // 

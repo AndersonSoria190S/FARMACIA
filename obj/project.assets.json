@@ -185,6 +185,18 @@
           "lib/net461/itextsharp.dll": {}
         }
       },
+      "itextsharp.xmlworker/5.5.13.2": {
+        "type": "package",
+        "dependencies": {
+          "iTextSharp": "5.5.13.2"
+        },
+        "compile": {
+          "lib/itextsharp.xmlworker.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.xmlworker.dll": {}
+        }
+      },
       "MathNet.Numerics.Signed/5.0.0": {
         "type": "package",
         "compile": {
@@ -1106,6 +1118,20 @@
         "lib/net461/iTextSharp.xml",
         "lib/net461/itextsharp.dll",
         "notice.txt"
+      ]
+    },
+    "itextsharp.xmlworker/5.5.13.2": {
+      "sha512": "GvvabJF8Rpy9NdIMqBT9DtEQUeLnIQjFIwH7xb9whe6xxEG77lZTQOEhe5HQjalTX4WxhBaOR9ffCq0cqjn7Fw==",
+      "type": "package",
+      "path": "itextsharp.xmlworker/5.5.13.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itextsharp.xmlworker.5.5.13.2.nupkg.sha512",
+        "itextsharp.xmlworker.nuspec",
+        "lib/itextsharp.xmlworker.dll"
       ]
     },
     "MathNet.Numerics.Signed/5.0.0": {
@@ -2288,7 +2314,8 @@
       "NPOI >= 2.7.3",
       "ReaLTaiizor >= 3.8.1.2",
       "System.Data.SQLite >= 1.0.119",
-      "iTextSharp >= 5.5.13.4"
+      "iTextSharp >= 5.5.13.4",
+      "itextsharp.xmlworker >= 5.5.13.2"
     ]
   },
   "packageFolders": {
@@ -2361,6 +2388,10 @@
           "iTextSharp": {
             "target": "Package",
             "version": "[5.5.13.4, )"
+          },
+          "itextsharp.xmlworker": {
+            "target": "Package",
+            "version": "[5.5.13.2, )"
           }
         },
         "imports": [
@@ -2403,6 +2434,16 @@
       "warningLevel": 1,
       "message": "El paquete \"iTextSharp 5.5.13.4\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"itextsharp.xmlworker 5.5.13.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "itextsharp.xmlworker",
       "targetGraphs": [
         "net7.0-windows7.0"
       ]
