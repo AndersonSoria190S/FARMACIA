@@ -39,6 +39,10 @@
             label9 = new Label();
             groupBox3 = new GroupBox();
             dgvdata = new DataGridView();
+            Producto = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            SubTotal = new DataGridViewTextBoxColumn();
             groupBox2 = new GroupBox();
             txtnombrecliente = new TextBox();
             txtdoccliente = new TextBox();
@@ -62,10 +66,6 @@
             panel1 = new Panel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             Usuarios = new Label();
-            Producto = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            SubTotal = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
@@ -216,6 +216,37 @@
             dgvdata.RowTemplate.Height = 25;
             dgvdata.Size = new Size(638, 194);
             dgvdata.TabIndex = 197;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.Name = "Producto";
+            Producto.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Producto.Width = 300;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            Cantidad.Resizable = DataGridViewTriState.False;
+            Cantidad.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Cantidad.Width = 80;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio ";
+            Precio.Name = "Precio";
+            Precio.Resizable = DataGridViewTriState.False;
+            Precio.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Precio.Width = 120;
+            // 
+            // SubTotal
+            // 
+            SubTotal.HeaderText = "Sub Total";
+            SubTotal.Name = "SubTotal";
+            SubTotal.Resizable = DataGridViewTriState.False;
+            SubTotal.SortMode = DataGridViewColumnSortMode.NotSortable;
+            SubTotal.Width = 95;
             // 
             // groupBox2
             // 
@@ -484,37 +515,6 @@
             Usuarios.TabIndex = 6;
             Usuarios.Text = "Buscar Compra";
             // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.Name = "Producto";
-            Producto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Producto.Width = 300;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            Cantidad.Resizable = DataGridViewTriState.False;
-            Cantidad.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Cantidad.Width = 80;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio ";
-            Precio.Name = "Precio";
-            Precio.Resizable = DataGridViewTriState.False;
-            Precio.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Precio.Width = 120;
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub Total";
-            SubTotal.Name = "SubTotal";
-            SubTotal.Resizable = DataGridViewTriState.False;
-            SubTotal.SortMode = DataGridViewColumnSortMode.NotSortable;
-            SubTotal.Width = 95;
-            // 
             // frmBuscarVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -532,6 +532,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmBuscarVenta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Buscar Venta :.";
             Load += frmBuscarVenta_Load;
             groupBox1.ResumeLayout(false);

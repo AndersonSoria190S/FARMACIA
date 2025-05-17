@@ -76,6 +76,9 @@
     <Compile Update="Formularios\Venta\frmBuscarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Venta\frmListaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Venta\frmNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>

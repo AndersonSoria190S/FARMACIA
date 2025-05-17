@@ -156,3 +156,4 @@ C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formular
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Venta.frmNuevaVenta.resources
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdVentaExitosa.resources
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Venta.frmBuscarVenta.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Venta.frmListaVentas.resources

@@ -57,14 +57,6 @@
             label3 = new Label();
             groupBox3 = new GroupBox();
             dgvdata = new DataGridView();
-            txttotalpagar = new TextBox();
-            label11 = new Label();
-            btnCancelarVenta = new FontAwesome.Sharp.IconButton();
-            btnCrearVenta = new FontAwesome.Sharp.IconButton();
-            label12 = new Label();
-            txtpagocon = new TextBox();
-            label13 = new Label();
-            txtcambio = new TextBox();
             Id = new DataGridViewTextBoxColumn();
             Codigo = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
@@ -74,6 +66,14 @@
             Precio = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
             btneliminar = new DataGridViewButtonColumn();
+            txttotalpagar = new TextBox();
+            label11 = new Label();
+            btnCancelarVenta = new FontAwesome.Sharp.IconButton();
+            btnCrearVenta = new FontAwesome.Sharp.IconButton();
+            label12 = new Label();
+            txtpagocon = new TextBox();
+            label13 = new Label();
+            txtcambio = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -405,6 +405,71 @@
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
             // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.Resizable = DataGridViewTriState.False;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Id.Visible = false;
+            // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Codigo";
+            Codigo.Name = "Codigo";
+            Codigo.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Codigo.Visible = false;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.Name = "Producto";
+            Producto.Resizable = DataGridViewTriState.False;
+            Producto.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Producto.Width = 260;
+            // 
+            // Categoria
+            // 
+            Categoria.HeaderText = "Categoria";
+            Categoria.Name = "Categoria";
+            Categoria.Resizable = DataGridViewTriState.False;
+            Categoria.Visible = false;
+            // 
+            // Medida
+            // 
+            Medida.HeaderText = "Medida";
+            Medida.Name = "Medida";
+            Medida.Visible = false;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            Cantidad.Resizable = DataGridViewTriState.False;
+            Cantidad.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Cantidad.Width = 70;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.Name = "Precio";
+            Precio.Resizable = DataGridViewTriState.False;
+            Precio.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // SubTotal
+            // 
+            SubTotal.HeaderText = "Sub Total";
+            SubTotal.Name = "SubTotal";
+            SubTotal.Resizable = DataGridViewTriState.False;
+            SubTotal.SortMode = DataGridViewColumnSortMode.NotSortable;
+            SubTotal.Width = 80;
+            // 
+            // btneliminar
+            // 
+            btneliminar.HeaderText = "";
+            btneliminar.Name = "btneliminar";
+            btneliminar.Width = 35;
+            // 
             // txttotalpagar
             // 
             txttotalpagar.Location = new Point(300, 516);
@@ -495,71 +560,6 @@
             txtcambio.TabIndex = 222;
             txtcambio.TextAlign = HorizontalAlignment.Center;
             // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.Resizable = DataGridViewTriState.False;
-            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Id.Visible = false;
-            // 
-            // Codigo
-            // 
-            Codigo.HeaderText = "Codigo";
-            Codigo.Name = "Codigo";
-            Codigo.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Codigo.Visible = false;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.Name = "Producto";
-            Producto.Resizable = DataGridViewTriState.False;
-            Producto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Producto.Width = 260;
-            // 
-            // Categoria
-            // 
-            Categoria.HeaderText = "Categoria";
-            Categoria.Name = "Categoria";
-            Categoria.Resizable = DataGridViewTriState.False;
-            Categoria.Visible = false;
-            // 
-            // Medida
-            // 
-            Medida.HeaderText = "Medida";
-            Medida.Name = "Medida";
-            Medida.Visible = false;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            Cantidad.Resizable = DataGridViewTriState.False;
-            Cantidad.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Cantidad.Width = 70;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.Name = "Precio";
-            Precio.Resizable = DataGridViewTriState.False;
-            Precio.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub Total";
-            SubTotal.Name = "SubTotal";
-            SubTotal.Resizable = DataGridViewTriState.False;
-            SubTotal.SortMode = DataGridViewColumnSortMode.NotSortable;
-            SubTotal.Width = 80;
-            // 
-            // btneliminar
-            // 
-            btneliminar.HeaderText = "";
-            btneliminar.Name = "btneliminar";
-            btneliminar.Width = 35;
-            // 
             // frmNuevaVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -580,6 +580,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmNuevaVenta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = " .: Nueva Venta :.";
             Load += frmNuevaVenta_Load;
             panel1.ResumeLayout(false);

@@ -46,7 +46,9 @@ namespace FARMACIA.Formularios.Intermedios
 
         private void btnlistaventas_Click(object sender, EventArgs e)
         {
-            
+            FormularioVista = new frmListaVentas();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

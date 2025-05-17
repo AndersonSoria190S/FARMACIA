@@ -250,7 +250,7 @@ namespace FARMACIA.Formularios.Venta
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-               // e.Graphics.DrawImage(Properties.Resources.delete17, new Rectangle(x, y, w, h));
+                // e.Graphics.DrawImage(Properties.Resources.delete17, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
         }

@@ -364,7 +364,7 @@ namespace FARMACIA.Logica
                     query.AppendLine($"update VENTA set Activo = 0 where IdVenta = {id};");
                     foreach (DetalleVenta item in odetalle)
                     {
-                        query.AppendLine(string.Format("update Producto set Stock = Stock + {0} where IdProducto = {1};", item.Cantidad, item.IdProducto));
+                        query.AppendLine(string.Format("update PRODUCTO_FARMACIA set Stock = Stock + {0} where IdProducto = {1};", item.Cantidad, item.IdProducto));
                     }
 
                     SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
