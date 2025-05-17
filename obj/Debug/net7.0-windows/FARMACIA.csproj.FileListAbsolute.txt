@@ -149,3 +149,10 @@ C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formular
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdProveedores.resources
 C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\itextsharp.xmlworker.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Mantenimiento.frmNegocio.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Clientes.frmClientes.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Clientes.frmMantCliente.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdClientes.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Intermedios.IVentas.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Venta.frmNuevaVenta.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Modales.mdVentaExitosa.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Venta.frmBuscarVenta.resources

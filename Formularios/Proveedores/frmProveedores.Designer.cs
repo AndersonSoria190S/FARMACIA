@@ -40,10 +40,10 @@
             txtbuscar = new TextBox();
             btnbuscar = new FontAwesome.Sharp.IconButton();
             dgvdata = new DataGridView();
-            NroFila = new DataGridViewTextBoxColumn();
-            NombreCompleto = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
             NumeroDocumento = new DataGridViewTextBoxColumn();
-            btneditar = new DataGridViewTextBoxColumn();
+            NombreCompleto = new DataGridViewTextBoxColumn();
+            btneditar = new DataGridViewButtonColumn();
             btneliminar = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
@@ -103,7 +103,7 @@
             // 
             // btnnuevoproveedor
             // 
-            btnnuevoproveedor.BackColor = SystemColors.Control;
+            btnnuevoproveedor.BackColor = SystemColors.Window;
             btnnuevoproveedor.Cursor = Cursors.Hand;
             btnnuevoproveedor.FlatStyle = FlatStyle.Popup;
             btnnuevoproveedor.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -193,46 +193,45 @@
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = Color.White;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { NroFila, NombreCompleto, NumeroDocumento, btneditar, btneliminar });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, NumeroDocumento, NombreCompleto, btneditar, btneliminar });
             dgvdata.Location = new Point(11, 142);
             dgvdata.Name = "dgvdata";
             dgvdata.RowTemplate.Height = 25;
-            dgvdata.Size = new Size(614, 243);
+            dgvdata.Size = new Size(616, 243);
             dgvdata.TabIndex = 203;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
             // 
-            // NroFila
+            // Id
             // 
-            NroFila.HeaderText = "";
-            NroFila.Name = "NroFila";
-            NroFila.Resizable = DataGridViewTriState.False;
-            NroFila.SortMode = DataGridViewColumnSortMode.NotSortable;
-            NroFila.Visible = false;
-            NroFila.Width = 70;
-            // 
-            // NombreCompleto
-            // 
-            NombreCompleto.HeaderText = "Numero Documento";
-            NombreCompleto.Name = "NombreCompleto";
-            NombreCompleto.Resizable = DataGridViewTriState.False;
-            NombreCompleto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            NombreCompleto.Width = 200;
+            Id.HeaderText = "";
+            Id.Name = "Id";
+            Id.Resizable = DataGridViewTriState.False;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Id.Visible = false;
+            Id.Width = 70;
             // 
             // NumeroDocumento
             // 
-            NumeroDocumento.HeaderText = "Nombre Completo";
+            NumeroDocumento.HeaderText = "Numero Documento";
             NumeroDocumento.Name = "NumeroDocumento";
             NumeroDocumento.Resizable = DataGridViewTriState.False;
             NumeroDocumento.SortMode = DataGridViewColumnSortMode.NotSortable;
             NumeroDocumento.Width = 200;
+            // 
+            // NombreCompleto
+            // 
+            NombreCompleto.HeaderText = "Nombre Completo";
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.Resizable = DataGridViewTriState.False;
+            NombreCompleto.SortMode = DataGridViewColumnSortMode.NotSortable;
+            NombreCompleto.Width = 200;
             // 
             // btneditar
             // 
             btneditar.HeaderText = "";
             btneditar.Name = "btneditar";
             btneditar.Resizable = DataGridViewTriState.False;
-            btneditar.SortMode = DataGridViewColumnSortMode.NotSortable;
             btneditar.Width = 35;
             // 
             // btneliminar
@@ -284,10 +283,10 @@
         private TextBox txtbuscar;
         private FontAwesome.Sharp.IconButton btnbuscar;
         private DataGridView dgvdata;
-        private DataGridViewTextBoxColumn NroFila;
-        private DataGridViewTextBoxColumn NombreCompleto;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn NumeroDocumento;
-        private DataGridViewTextBoxColumn btneditar;
+        private DataGridViewTextBoxColumn NombreCompleto;
+        private DataGridViewButtonColumn btneditar;
         private DataGridViewButtonColumn btneliminar;
     }
 }

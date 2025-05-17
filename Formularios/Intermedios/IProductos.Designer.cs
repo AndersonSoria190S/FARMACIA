@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             btngenerarbarras = new FontAwesome.Sharp.IconButton();
             btncargamasiva = new FontAwesome.Sharp.IconButton();
             btnnuevacompra = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,6 +47,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(305, 296);
             panel1.TabIndex = 0;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(0, 143, 213);
+            iconButton1.Cursor = Cursors.Hand;
+            iconButton1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iconButton1.ForeColor = Color.White;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(21, 209);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(60, 3, 0, 0);
+            iconButton1.Size = new Size(262, 55);
+            iconButton1.TabIndex = 5;
+            iconButton1.Text = "Cerrar";
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click_1;
             // 
             // btngenerarbarras
             // 
@@ -107,26 +127,6 @@
             btnnuevacompra.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnnuevacompra.UseVisualStyleBackColor = false;
             btnnuevacompra.Click += btnnuevacompra_Click;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.FromArgb(0, 143, 213);
-            iconButton1.Cursor = Cursors.Hand;
-            iconButton1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = Color.White;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(21, 209);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(60, 3, 0, 0);
-            iconButton1.Size = new Size(262, 55);
-            iconButton1.TabIndex = 5;
-            iconButton1.Text = "Cerrar";
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = false;
-            iconButton1.Click += iconButton1_Click_1;
             // 
             // IProductos
             // 

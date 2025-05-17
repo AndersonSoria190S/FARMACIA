@@ -170,5 +170,10 @@ namespace FARMACIA.Formularios.Clientes
             }
             dgvdata.ClearSelection();
         }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

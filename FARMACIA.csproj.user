@@ -25,6 +25,9 @@
     <Compile Update="Formularios\Intermedios\IProductos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Intermedios\IVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Mantenimiento\frmMantUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -49,6 +52,9 @@
     <Compile Update="Formularios\Modales\mdProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Modales\mdVentaExitosa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Productos\frmCargaMasiva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Proveedores\frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Venta\frmBuscarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Venta\frmNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inicio.cs">

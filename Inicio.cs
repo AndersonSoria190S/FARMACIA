@@ -147,5 +147,22 @@ namespace FARMACIA
             FormularioVista.Show();
             FormularioVista.FormClosing += Frm_Closing;
         }
+
+        private void menuVentas_Click(object sender, EventArgs e)
+        {
+            using (var Iform = new IVentas())
+            {
+
+                Iform._NombreUsuario = NombreUsuario;
+                var result = Iform.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Form FormularioVista = Iform.FormularioVista;
+                    this.Hide();
+                    FormularioVista.Show();
+                    FormularioVista.FormClosing += Frm_Closing;
+                }
+            }
+        }
     }
 }

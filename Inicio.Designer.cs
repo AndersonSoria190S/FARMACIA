@@ -230,6 +230,7 @@
             menuVentas.Text = "Ventas";
             menuVentas.TextAlign = ContentAlignment.BottomCenter;
             menuVentas.UseVisualStyleBackColor = false;
+            menuVentas.Click += menuVentas_Click;
             // 
             // menuProductos
             // 
