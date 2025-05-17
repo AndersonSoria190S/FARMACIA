@@ -97,9 +97,9 @@
             label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label2.Location = new Point(11, 106);
             label2.Name = "label2";
-            label2.Size = new Size(156, 15);
+            label2.Size = new Size(174, 15);
             label2.TabIndex = 195;
-            label2.Text = "LISTA DE PRODUCTOS";
+            label2.Text = "LISTA DE PROVEEDORES";
             // 
             // btnnuevoproveedor
             // 

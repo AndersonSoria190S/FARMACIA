@@ -1,4 +1,5 @@
-﻿using FARMACIA.Formularios.Intermedios;
+﻿using FARMACIA.Formularios.Clientes;
+using FARMACIA.Formularios.Intermedios;
 using FARMACIA.Formularios.Proveedores;
 using FARMACIA.Intermedios;
 
@@ -137,6 +138,14 @@ namespace FARMACIA
                     FormularioVista.FormClosing += Frm_Closing;
                 }
             }
+        }
+
+        private void menuClientes_Click(object sender, EventArgs e)
+        {
+            frmClientes FormularioVista = new frmClientes();
+            this.Hide();
+            FormularioVista.Show();
+            FormularioVista.FormClosing += Frm_Closing;
         }
     }
 }

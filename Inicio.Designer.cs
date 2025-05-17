@@ -168,6 +168,7 @@
             menuClientes.Text = "Clientes";
             menuClientes.TextAlign = ContentAlignment.BottomCenter;
             menuClientes.UseVisualStyleBackColor = false;
+            menuClientes.Click += menuClientes_Click;
             // 
             // menuCompras
             // 
