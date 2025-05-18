@@ -100,5 +100,10 @@ namespace FARMACIA
         {
 
         }
+
+        private void txtclave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

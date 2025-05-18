@@ -52,24 +52,24 @@
             panel1.BackColor = Color.FromArgb(0, 143, 213);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(Usuarios);
-            panel1.Location = new Point(2, 0);
+            panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(494, 43);
+            panel1.Size = new Size(498, 43);
             panel1.TabIndex = 18;
             // 
             // iconButton1
             // 
             iconButton1.BackColor = Color.FromArgb(0, 143, 213);
             iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             iconButton1.ForeColor = SystemColors.ControlLightLight;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             iconButton1.IconColor = Color.White;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton1.IconSize = 24;
-            iconButton1.Location = new Point(412, 8);
+            iconButton1.Location = new Point(404, 8);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(69, 31);
+            iconButton1.Size = new Size(77, 31);
             iconButton1.TabIndex = 213;
             iconButton1.Text = "Salir";
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -100,6 +100,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(picLogo);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 49);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(471, 214);
@@ -146,21 +147,21 @@
             // 
             txtdireccion.Location = new Point(185, 134);
             txtdireccion.Name = "txtdireccion";
-            txtdireccion.Size = new Size(264, 23);
+            txtdireccion.Size = new Size(264, 21);
             txtdireccion.TabIndex = 209;
             // 
             // txtruc
             // 
             txtruc.Location = new Point(185, 90);
             txtruc.Name = "txtruc";
-            txtruc.Size = new Size(264, 23);
+            txtruc.Size = new Size(264, 21);
             txtruc.TabIndex = 208;
             // 
             // txtrazonsocial
             // 
             txtrazonsocial.Location = new Point(185, 46);
             txtrazonsocial.Name = "txtrazonsocial";
-            txtrazonsocial.Size = new Size(264, 23);
+            txtrazonsocial.Size = new Size(264, 21);
             txtrazonsocial.TabIndex = 207;
             // 
             // label4
@@ -168,7 +169,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(185, 116);
             label4.Name = "label4";
-            label4.Size = new Size(60, 15);
+            label4.Size = new Size(62, 15);
             label4.TabIndex = 4;
             label4.Text = "Direccion:";
             // 
@@ -177,7 +178,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(185, 72);
             label3.Name = "label3";
-            label3.Size = new Size(28, 15);
+            label3.Size = new Size(29, 15);
             label3.TabIndex = 3;
             label3.Text = "NIT:";
             // 
@@ -186,7 +187,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(185, 28);
             label2.Name = "label2";
-            label2.Size = new Size(76, 15);
+            label2.Size = new Size(83, 15);
             label2.TabIndex = 2;
             label2.Text = "Razon Social:";
             // 
@@ -195,7 +196,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(16, 19);
             label1.Name = "label1";
-            label1.Size = new Size(37, 15);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 1;
             label1.Text = "Logo:";
             // 
@@ -204,6 +205,7 @@
             picLogo.Location = new Point(16, 40);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(136, 125);
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
             // 

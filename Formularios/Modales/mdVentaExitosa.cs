@@ -23,5 +23,10 @@ namespace FARMACIA.Formularios.Modales
             txtnumerodocumento.Text = _numerodocumento;
             txtnumerodocumento.Focus();
         }
+
+        private void btnagregarproducto_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

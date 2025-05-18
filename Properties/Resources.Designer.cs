@@ -140,21 +140,23 @@ namespace FARMACIA.Properties {
         ///            border-collapse: collapse;
         ///        }
         ///
-        ///            table.border th {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
+        ///        table.border th {
+        ///            text-align: center;
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
         ///
-        ///            table.border td {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///    &lt;/style&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///    &lt;table border=&quot;0&quot; style=&quot;wi [resto de la cadena truncado]&quot;;.
+        ///        table.border td {
+        ///            text-align: center;
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
+        ///
+        ///        table.border thead tr {
+        ///            background-color: rgb(0, 143, 213);
+        ///        }
+        ///
+        ///        [resto de la cadena truncado]&quot;;.
         /// </summary>
         public static string PlantillaCompra {
             get {
@@ -182,21 +184,21 @@ namespace FARMACIA.Properties {
         ///            border-collapse: collapse;
         ///        }
         ///
-        ///            table.border th {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
+        ///        table.border th {
+        ///            text-align: center;
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
         ///
-        ///            table.border td {
-        ///                text-align: center;
-        ///                padding: 5px;
-        ///                border: 1px solid black;
-        ///            }
-        ///    &lt;/style&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///    &lt;table border=&quot;0&quot; style=&quot;wi [resto de la cadena truncado]&quot;;.
+        ///        table.border td {
+        ///            text-align: center;
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
+        ///
+        ///        /* Color de encabezado actualizado a celeste */
+        ///        table.border thead tr {
+        ///           [resto de la cadena truncado]&quot;;.
         /// </summary>
         public static string PlantillaVenta {
             get {

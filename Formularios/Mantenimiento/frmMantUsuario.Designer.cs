@@ -48,35 +48,40 @@
             // 
             // txtusuario
             // 
+            txtusuario.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtusuario.Location = new Point(12, 75);
             txtusuario.Name = "txtusuario";
-            txtusuario.Size = new Size(238, 23);
+            txtusuario.Size = new Size(238, 21);
             txtusuario.TabIndex = 0;
             // 
             // txtnombre
             // 
+            txtnombre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtnombre.Location = new Point(12, 119);
             txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(238, 23);
+            txtnombre.Size = new Size(238, 21);
             txtnombre.TabIndex = 1;
             // 
             // txtconfirmarclave
             // 
+            txtconfirmarclave.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtconfirmarclave.Location = new Point(12, 251);
             txtconfirmarclave.Name = "txtconfirmarclave";
-            txtconfirmarclave.Size = new Size(238, 23);
+            txtconfirmarclave.Size = new Size(238, 21);
             txtconfirmarclave.TabIndex = 2;
             // 
             // txtclave
             // 
+            txtclave.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtclave.Location = new Point(12, 207);
             txtclave.Name = "txtclave";
-            txtclave.Size = new Size(238, 23);
+            txtclave.Size = new Size(238, 21);
             txtclave.TabIndex = 3;
             // 
             // cborol
             // 
             cborol.DropDownStyle = ComboBoxStyle.DropDownList;
+            cborol.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cborol.FormattingEnabled = true;
             cborol.Location = new Point(12, 163);
             cborol.Name = "cborol";
@@ -125,27 +130,30 @@
             // lblresultado
             // 
             lblresultado.AutoSize = true;
+            lblresultado.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblresultado.Location = new Point(12, 283);
             lblresultado.Name = "lblresultado";
-            lblresultado.Size = new Size(59, 15);
+            lblresultado.Size = new Size(63, 15);
             lblresultado.TabIndex = 7;
             lblresultado.Text = "Resultado";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(12, 57);
             label1.Name = "label1";
-            label1.Size = new Size(53, 15);
+            label1.Size = new Size(56, 15);
             label1.TabIndex = 8;
             label1.Text = "Usuario: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(12, 101);
             label2.Name = "label2";
-            label2.Size = new Size(110, 15);
+            label2.Size = new Size(111, 15);
             label2.TabIndex = 9;
             label2.Text = "Nombre Completo:";
             label2.Click += label2_Click;
@@ -153,9 +161,10 @@
             // Rol
             // 
             Rol.AutoSize = true;
+            Rol.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Rol.Location = new Point(12, 145);
             Rol.Name = "Rol";
-            Rol.Size = new Size(30, 15);
+            Rol.Size = new Size(32, 15);
             Rol.TabIndex = 10;
             Rol.Text = "Rol: ";
             Rol.Click += Rol_Click;
@@ -163,18 +172,20 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(12, 189);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(76, 15);
             label3.TabIndex = 11;
             label3.Text = "Contraseña: ";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(12, 233);
             label4.Name = "label4";
-            label4.Size = new Size(133, 15);
+            label4.Size = new Size(136, 15);
             label4.TabIndex = 12;
             label4.Text = " Confirmar Contraseña: ";
             // 

@@ -52,6 +52,7 @@
             btnagregarproducto.TextAlign = ContentAlignment.MiddleRight;
             btnagregarproducto.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnagregarproducto.UseVisualStyleBackColor = true;
+            btnagregarproducto.Click += btnagregarproducto_Click;
             // 
             // txtnumerodocumento
             // 
@@ -70,7 +71,7 @@
             iconPictureBox1.IconColor = SystemColors.MenuHighlight;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 51;
-            iconPictureBox1.Location = new Point(17, 40);
+            iconPictureBox1.Location = new Point(12, 29);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(54, 51);
             iconPictureBox1.TabIndex = 213;
@@ -80,7 +81,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(79, 53);
+            label1.Location = new Point(79, 44);
             label1.Name = "label1";
             label1.Size = new Size(197, 15);
             label1.TabIndex = 212;
@@ -90,7 +91,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(79, 29);
+            label9.Location = new Point(79, 20);
             label9.Name = "label9";
             label9.Size = new Size(117, 15);
             label9.TabIndex = 211;
@@ -100,14 +101,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ControlLightLight;
+            ClientSize = new Size(284, 133);
+            ControlBox = false;
             Controls.Add(btnagregarproducto);
             Controls.Add(txtnumerodocumento);
             Controls.Add(iconPictureBox1);
             Controls.Add(label1);
             Controls.Add(label9);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "mdVentaExitosa";
-            Text = "mdVentaExitosa";
+            Text = ".: Mensaje :.";
             Load += mdVentaExitosa_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);

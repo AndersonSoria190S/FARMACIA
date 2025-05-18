@@ -66,11 +66,13 @@
             // button1
             // 
             button1.BackgroundImage = Properties.Resources._288131666_5152367421513190_7345227237005028619_n;
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.Window;
-            button1.Location = new Point(339, 213);
+            button1.Location = new Point(339, 238);
+            button1.Margin = new Padding(1);
             button1.Name = "button1";
-            button1.Size = new Size(128, 36);
+            button1.Size = new Size(128, 28);
             button1.TabIndex = 2;
             button1.Text = "Ingresar";
             button1.UseVisualStyleBackColor = true;
@@ -79,11 +81,13 @@
             // button2
             // 
             button2.BackColor = Color.Red;
-            button2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Cursor = Cursors.Hand;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(488, 213);
+            button2.Location = new Point(488, 238);
             button2.Name = "button2";
-            button2.Size = new Size(128, 36);
+            button2.Size = new Size(128, 28);
             button2.TabIndex = 3;
             button2.Text = "Salir";
             button2.UseVisualStyleBackColor = false;
@@ -93,7 +97,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(339, 70);
+            label1.Location = new Point(339, 77);
             label1.Name = "label1";
             label1.Size = new Size(60, 16);
             label1.TabIndex = 4;
@@ -102,8 +106,9 @@
             // 
             // txtusuario
             // 
+            txtusuario.Cursor = Cursors.Hand;
             txtusuario.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtusuario.Location = new Point(339, 104);
+            txtusuario.Location = new Point(339, 113);
             txtusuario.Name = "txtusuario";
             txtusuario.Size = new Size(277, 22);
             txtusuario.TabIndex = 5;
@@ -112,7 +117,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(337, 139);
+            label2.Location = new Point(339, 147);
             label2.Name = "label2";
             label2.Size = new Size(76, 16);
             label2.TabIndex = 6;
@@ -121,17 +126,20 @@
             // 
             // txtclave
             // 
-            txtclave.Location = new Point(339, 166);
+            txtclave.AccessibleRole = AccessibleRole.None;
+            txtclave.ImeMode = ImeMode.NoControl;
+            txtclave.Location = new Point(339, 176);
             txtclave.Name = "txtclave";
             txtclave.Size = new Size(277, 23);
             txtclave.TabIndex = 7;
             txtclave.UseSystemPasswordChar = true;
+            txtclave.TextChanged += txtclave_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Window;
+            BackColor = SystemColors.HighlightText;
             ClientSize = new Size(656, 314);
             Controls.Add(txtclave);
             Controls.Add(label2);

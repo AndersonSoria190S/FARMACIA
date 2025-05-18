@@ -335,6 +335,7 @@
             iconButton1.Text = "Salir";
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click;
             // 
             // Usuarios
             // 
@@ -372,7 +373,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmListaVentas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmListaVentas";
+            Text = ".: Lista Compras :.";
             Load += frmListaVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             panel1.ResumeLayout(false);
