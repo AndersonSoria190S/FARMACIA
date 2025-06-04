@@ -19,5 +19,7 @@ namespace FARMACIA.Modelo
         public string PrecioVenta { get; set; }
         public int Cantidad { get; set; }
         public string SubTotal { get; set; }
+        public string FechaVencimiento { get; set; }
+
     }
 }

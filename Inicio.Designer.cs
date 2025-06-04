@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             lblstatus1 = new ToolStripStatusLabel();
@@ -35,6 +36,7 @@
             lblstatus2 = new ToolStripStatusLabel();
             menuMantenimiento = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             menuClientes = new FontAwesome.Sharp.IconButton();
@@ -43,8 +45,11 @@
             menuVentas = new FontAwesome.Sharp.IconButton();
             menuProductos = new FontAwesome.Sharp.IconButton();
             menuProveedores = new FontAwesome.Sharp.IconButton();
+            pictureBox2 = new PictureBox();
             statusStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // statusStrip1
@@ -57,6 +62,7 @@
             statusStrip1.Size = new Size(725, 25);
             statusStrip1.TabIndex = 11;
             statusStrip1.Text = "statusStrip1";
+            statusStrip1.ItemClicked += statusStrip1_ItemClicked;
             // 
             // toolStripStatusLabel1
             // 
@@ -71,6 +77,7 @@
             lblstatus1.Name = "lblstatus1";
             lblstatus1.Size = new Size(184, 20);
             lblstatus1.Text = "toolStripStatusLabel2";
+            lblstatus1.Click += lblstatus1_Click;
             // 
             // toolStripStatusLabel3
             // 
@@ -110,12 +117,25 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 143, 213);
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(iconButton2);
             panel1.Controls.Add(iconButton1);
+            panel1.ForeColor = SystemColors.ControlDark;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(746, 78);
+            panel1.Size = new Size(725, 88);
             panel1.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(10, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(251, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // iconButton2
             // 
@@ -274,12 +294,23 @@
             menuProveedores.UseVisualStyleBackColor = false;
             menuProveedores.Click += menuProveedores_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-9, 198);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(734, 132);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 18;
+            pictureBox2.TabStop = false;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(725, 485);
+            ControlBox = false;
             Controls.Add(menuProveedores);
             Controls.Add(menuReportes);
             Controls.Add(menuVentas);
@@ -289,6 +320,7 @@
             Controls.Add(panel1);
             Controls.Add(menuMantenimiento);
             Controls.Add(statusStrip1);
+            Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Inicio";
             StartPosition = FormStartPosition.CenterScreen;
@@ -297,6 +329,8 @@
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +352,7 @@
         private FontAwesome.Sharp.IconButton menuVentas;
         private FontAwesome.Sharp.IconButton menuProductos;
         private FontAwesome.Sharp.IconButton menuProveedores;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

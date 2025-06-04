@@ -36,6 +36,8 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             Usuarios = new Label();
             groupBox1 = new GroupBox();
+            label11 = new Label();
+            dtpfechavencimiento = new DateTimePicker();
             btnagregarproducto = new FontAwesome.Sharp.IconButton();
             txtpreciocompra = new TextBox();
             txtproducto = new TextBox();
@@ -54,6 +56,10 @@
             label4 = new Label();
             label3 = new Label();
             dgvdata = new DataGridView();
+            btnCrearCompra = new FontAwesome.Sharp.IconButton();
+            btnCancelarCompra = new FontAwesome.Sharp.IconButton();
+            label10 = new Label();
+            txttotalpagar = new TextBox();
             Id = new DataGridViewTextBoxColumn();
             Codigo = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
@@ -63,11 +69,8 @@
             PrecioVenta = new DataGridViewTextBoxColumn();
             PrecioCompra = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
+            FechaVencimiento = new DataGridViewTextBoxColumn();
             btneliminar = new DataGridViewButtonColumn();
-            btnCrearCompra = new FontAwesome.Sharp.IconButton();
-            btnCancelarCompra = new FontAwesome.Sharp.IconButton();
-            label10 = new Label();
-            txttotalpagar = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -156,13 +159,15 @@
             Usuarios.ForeColor = SystemColors.ButtonHighlight;
             Usuarios.Location = new Point(223, 12);
             Usuarios.Name = "Usuarios";
-            Usuarios.Size = new Size(223, 31);
+            Usuarios.Size = new Size(208, 31);
             Usuarios.TabIndex = 6;
-            Usuarios.Text = "Nuevo Producto";
+            Usuarios.Text = "Nueva Compra";
             Usuarios.Click += Usuarios_Click;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(dtpfechavencimiento);
             groupBox1.Controls.Add(btnagregarproducto);
             groupBox1.Controls.Add(txtpreciocompra);
             groupBox1.Controls.Add(txtproducto);
@@ -182,10 +187,29 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(12, 100);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(630, 145);
+            groupBox1.Size = new Size(630, 175);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(11, 143);
+            label11.Name = "label11";
+            label11.Size = new Size(130, 15);
+            label11.TabIndex = 209;
+            label11.Text = "Fecha de vencimiento:";
+            label11.Click += label11_Click;
+            // 
+            // dtpfechavencimiento
+            // 
+            dtpfechavencimiento.Format = DateTimePickerFormat.Short;
+            dtpfechavencimiento.Location = new Point(147, 143);
+            dtpfechavencimiento.Name = "dtpfechavencimiento";
+            dtpfechavencimiento.Size = new Size(136, 21);
+            dtpfechavencimiento.TabIndex = 208;
+            dtpfechavencimiento.ValueChanged += txtfechafin_ValueChanged;
             // 
             // btnagregarproducto
             // 
@@ -366,14 +390,66 @@
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = Color.White;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Codigo, Producto, Categoria, Medida, Cantidad, PrecioVenta, PrecioCompra, SubTotal, btneliminar });
-            dgvdata.Location = new Point(12, 251);
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Codigo, Producto, Categoria, Medida, Cantidad, PrecioVenta, PrecioCompra, SubTotal, FechaVencimiento, btneliminar });
+            dgvdata.Location = new Point(12, 301);
             dgvdata.Name = "dgvdata";
             dgvdata.RowTemplate.Height = 25;
             dgvdata.Size = new Size(630, 229);
             dgvdata.TabIndex = 196;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
+            // 
+            // btnCrearCompra
+            // 
+            btnCrearCompra.Cursor = Cursors.Hand;
+            btnCrearCompra.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrearCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
+            btnCrearCompra.IconColor = Color.LimeGreen;
+            btnCrearCompra.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnCrearCompra.IconSize = 17;
+            btnCrearCompra.Location = new Point(12, 536);
+            btnCrearCompra.Name = "btnCrearCompra";
+            btnCrearCompra.Size = new Size(118, 21);
+            btnCrearCompra.TabIndex = 208;
+            btnCrearCompra.Text = "Crear Compra";
+            btnCrearCompra.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCrearCompra.UseVisualStyleBackColor = true;
+            btnCrearCompra.Click += btnCrearCompra_Click;
+            // 
+            // btnCancelarCompra
+            // 
+            btnCancelarCompra.Cursor = Cursors.Hand;
+            btnCancelarCompra.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelarCompra.IconChar = FontAwesome.Sharp.IconChar.Times;
+            btnCancelarCompra.IconColor = Color.Red;
+            btnCancelarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCancelarCompra.IconSize = 17;
+            btnCancelarCompra.Location = new Point(136, 536);
+            btnCancelarCompra.Name = "btnCancelarCompra";
+            btnCancelarCompra.Size = new Size(85, 21);
+            btnCancelarCompra.TabIndex = 209;
+            btnCancelarCompra.Text = "Salir";
+            btnCancelarCompra.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCancelarCompra.UseVisualStyleBackColor = true;
+            btnCancelarCompra.Click += btnCancelarCompra_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(422, 539);
+            label10.Name = "label10";
+            label10.Size = new Size(86, 15);
+            label10.TabIndex = 208;
+            label10.Text = "Pagar a Total: ";
+            // 
+            // txttotalpagar
+            // 
+            txttotalpagar.Location = new Point(524, 536);
+            txttotalpagar.Name = "txttotalpagar";
+            txttotalpagar.ReadOnly = true;
+            txttotalpagar.Size = new Size(118, 21);
+            txttotalpagar.TabIndex = 208;
+            txttotalpagar.TextAlign = HorizontalAlignment.Center;
             // 
             // Id
             // 
@@ -440,70 +516,24 @@
             SubTotal.SortMode = DataGridViewColumnSortMode.NotSortable;
             SubTotal.Width = 80;
             // 
+            // FechaVencimiento
+            // 
+            FechaVencimiento.HeaderText = "Fecha Vencimiento";
+            FechaVencimiento.Name = "FechaVencimiento";
+            FechaVencimiento.Visible = false;
+            // 
             // btneliminar
             // 
             btneliminar.HeaderText = "";
             btneliminar.Name = "btneliminar";
             btneliminar.Width = 35;
             // 
-            // btnCrearCompra
-            // 
-            btnCrearCompra.Cursor = Cursors.Hand;
-            btnCrearCompra.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCrearCompra.IconChar = FontAwesome.Sharp.IconChar.Tag;
-            btnCrearCompra.IconColor = Color.LimeGreen;
-            btnCrearCompra.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnCrearCompra.IconSize = 17;
-            btnCrearCompra.Location = new Point(12, 486);
-            btnCrearCompra.Name = "btnCrearCompra";
-            btnCrearCompra.Size = new Size(118, 21);
-            btnCrearCompra.TabIndex = 208;
-            btnCrearCompra.Text = "Crear Compra";
-            btnCrearCompra.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCrearCompra.UseVisualStyleBackColor = true;
-            btnCrearCompra.Click += btnCrearCompra_Click;
-            // 
-            // btnCancelarCompra
-            // 
-            btnCancelarCompra.Cursor = Cursors.Hand;
-            btnCancelarCompra.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelarCompra.IconChar = FontAwesome.Sharp.IconChar.Times;
-            btnCancelarCompra.IconColor = Color.Red;
-            btnCancelarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCancelarCompra.IconSize = 17;
-            btnCancelarCompra.Location = new Point(136, 486);
-            btnCancelarCompra.Name = "btnCancelarCompra";
-            btnCancelarCompra.Size = new Size(85, 21);
-            btnCancelarCompra.TabIndex = 209;
-            btnCancelarCompra.Text = "Salir";
-            btnCancelarCompra.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCancelarCompra.UseVisualStyleBackColor = true;
-            btnCancelarCompra.Click += btnCancelarCompra_Click;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(422, 489);
-            label10.Name = "label10";
-            label10.Size = new Size(86, 15);
-            label10.TabIndex = 208;
-            label10.Text = "Pagar a Total: ";
-            // 
-            // txttotalpagar
-            // 
-            txttotalpagar.Location = new Point(524, 486);
-            txttotalpagar.Name = "txttotalpagar";
-            txttotalpagar.ReadOnly = true;
-            txttotalpagar.Size = new Size(118, 21);
-            txttotalpagar.TabIndex = 208;
-            txttotalpagar.TextAlign = HorizontalAlignment.Center;
-            // 
             // frmNuevaCompra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(654, 519);
+            ClientSize = new Size(654, 569);
             ControlBox = false;
             Controls.Add(txttotalpagar);
             Controls.Add(label10);
@@ -557,6 +587,12 @@
         private FontAwesome.Sharp.IconButton btnbuscarproducto;
         private FontAwesome.Sharp.IconButton btnagregarproducto;
         private DataGridView dgvdata;
+        private FontAwesome.Sharp.IconButton btnCrearCompra;
+        private FontAwesome.Sharp.IconButton btnCancelarCompra;
+        private Label label10;
+        private TextBox txttotalpagar;
+        private Label label11;
+        private DateTimePicker dtpfechavencimiento;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Codigo;
         private DataGridViewTextBoxColumn Producto;
@@ -566,10 +602,7 @@
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn PrecioCompra;
         private DataGridViewTextBoxColumn SubTotal;
+        private DataGridViewTextBoxColumn FechaVencimiento;
         private DataGridViewButtonColumn btneliminar;
-        private FontAwesome.Sharp.IconButton btnCrearCompra;
-        private FontAwesome.Sharp.IconButton btnCancelarCompra;
-        private Label label10;
-        private TextBox txttotalpagar;
     }
 }

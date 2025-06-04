@@ -10,5 +10,6 @@
         public int Stock { get; set; }
         public string PrecioCompra { get; set; }
         public string PrecioVenta { get; set; }
+        public string FechaVencimiento { get; set; }
     }
 }

@@ -92,7 +92,6 @@ namespace FARMACIA.Logica
 
         public int Registrar(Compra obj, out string mensaje)
         {
-
             mensaje = string.Empty;
             int respuesta = 0;
             SQLiteTransaction objTransaccion = null;
@@ -106,21 +105,26 @@ namespace FARMACIA.Logica
                     StringBuilder query = new StringBuilder();
 
                     query.AppendLine("CREATE TEMP TABLE _TEMP(id INTEGER);");
-                    query.AppendLine(string.Format("Insert into Compra(NumeroDocumento,FechaRegistro,UsuarioRegistro,DocumentoProveedor,NombreProveedor,CantidadProductos,MontoTotal) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}');",
+                    query.AppendLine(string.Format(
+                        "INSERT INTO Compra(NumeroDocumento,FechaRegistro,UsuarioRegistro,DocumentoProveedor,NombreProveedor,CantidadProductos,MontoTotal) " +
+                        "VALUES('{0}','{1}','{2}','{3}','{4}',{5},'{6}');",
                         obj.NumeroDocumento,
                         obj.FechaRegistro,
                         obj.UsuarioRegistro,
                         obj.DocumentoProveedor,
                         obj.NombreProveedor,
                         obj.CantidadProductos,
-                        obj.MontoTotal));
+                        obj.MontoTotal
+                    ));
 
                     query.AppendLine("INSERT INTO _TEMP (id) VALUES (last_insert_rowid());");
 
                     foreach (DetalleCompra de in obj.olistaDetalle)
                     {
-                        query.AppendLine(string.Format("insert into DETALLE_COMPRA(IdCompra,IdProducto,CodigoProducto,DescripcionProducto,CategoriaProducto,MedidaProducto,PrecioCompra,PrecioVenta,Cantidad,SubTotal) values({0},{1},'{2}','{3}','{4}','{5}','{6}','{7}',{8},'{9}');",
-                            "(select id from _TEMP)",
+                        query.AppendLine(string.Format(
+                            "INSERT INTO DETALLE_COMPRA(IdCompra,IdProducto,CodigoProducto,DescripcionProducto,CategoriaProducto,MedidaProducto,PrecioCompra,PrecioVenta,Cantidad,SubTotal,FechaVencimiento) " +
+                            "VALUES({0},{1},'{2}','{3}','{4}','{5}','{6}','{7}',{8},'{9}','{10}');",
+                            "(SELECT id FROM _TEMP)",
                             de.IdProducto,
                             de.CodigoProducto,
                             de.DescripcionProducto,
@@ -129,10 +133,18 @@ namespace FARMACIA.Logica
                             de.PrecioCompra,
                             de.PrecioVenta,
                             de.Cantidad,
-                            de.SubTotal
-                            ));
+                            de.SubTotal,
+                            de.FechaVencimiento 
+                        ));
 
-                        query.AppendLine(string.Format("UPDATE PRODUCTO_FARMACIA set PrecioCompra = '{0}', PrecioVenta = '{1}', Stock = (Stock + {2}) where IdProducto = {3};", de.PrecioCompra, de.PrecioVenta, de.Cantidad, de.IdProducto));
+                        query.AppendLine(string.Format(
+                            "UPDATE PRODUCTO_FARMACIA SET PrecioCompra = '{0}', PrecioVenta = '{1}', Stock = (Stock + {2}), FechaVencimiento = '{3}' WHERE IdProducto = {4};",
+                            de.PrecioCompra,
+                            de.PrecioVenta,
+                            de.Cantidad,
+                            de.FechaVencimiento,
+                            de.IdProducto
+                        ));
                     }
 
                     query.AppendLine("DROP TABLE _TEMP;");
@@ -142,7 +154,6 @@ namespace FARMACIA.Logica
                     cmd.Transaction = objTransaccion;
                     respuesta = cmd.ExecuteNonQuery();
 
-
                     if (respuesta < 1)
                     {
                         objTransaccion.Rollback();
@@ -150,7 +161,6 @@ namespace FARMACIA.Logica
                     }
 
                     objTransaccion.Commit();
-
                 }
                 catch (Exception ex)
                 {
@@ -160,9 +170,9 @@ namespace FARMACIA.Logica
                 }
             }
 
-
             return respuesta;
         }
+
 
         public List<VistaCompra> Resumen(string fechainicio = "", string fechafin = "")
         {
@@ -174,13 +184,13 @@ namespace FARMACIA.Logica
                     conexion.Open();
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("select e.NumeroDocumento,strftime('%d/%m/%Y', date(e.FechaRegistro))[FechaRegistro],e.UsuarioRegistro,");
-                    query.AppendLine("e.DocumentoProveedor,e.NombreProveedor,e.MontoTotal,");
-                    query.AppendLine("de.CodigoProducto,de.DescripcionProducto,de.CategoriaProducto,de.MedidaProducto,de.PrecioCompra,");
-                    query.AppendLine("de.PrecioVenta,de.Cantidad,de.SubTotal");
-                    query.AppendLine("from Compra e");
-                    query.AppendLine("inner join DETALLE_Compra de on e.IdCompra = de.IdCompra");
-                    query.AppendLine("where DATE(e.FechaRegistro) BETWEEN DATE(@pfechainicio) AND DATE(@pfechafin) and e.Activo = 1");
+                    query.AppendLine("SELECT e.NumeroDocumento, strftime('%d/%m/%Y', date(e.FechaRegistro)) AS FechaRegistro,");
+                    query.AppendLine("e.UsuarioRegistro, e.DocumentoProveedor, e.NombreProveedor, e.MontoTotal,");
+                    query.AppendLine("de.CodigoProducto, de.DescripcionProducto, de.CategoriaProducto, de.MedidaProducto,");
+                    query.AppendLine("de.PrecioCompra, de.PrecioVenta, de.Cantidad, de.SubTotal, de.FechaVencimiento");
+                    query.AppendLine("FROM Compra e");
+                    query.AppendLine("INNER JOIN DETALLE_Compra de ON e.IdCompra = de.IdCompra");
+                    query.AppendLine("WHERE DATE(e.FechaRegistro) BETWEEN DATE(@pfechainicio) AND DATE(@pfechafin) AND e.Activo = 1");
 
                     SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@pfechainicio", fechainicio));
@@ -206,7 +216,8 @@ namespace FARMACIA.Logica
                                 PrecioCompra = dr["PrecioCompra"].ToString(),
                                 PrecioVenta = dr["PrecioVenta"].ToString(),
                                 Cantidad = dr["Cantidad"].ToString(),
-                                SubTotal = dr["SubTotal"].ToString()
+                                SubTotal = dr["SubTotal"].ToString(),
+                                FechaVencimiento = dr["FechaVencimiento"]?.ToString()
                             });
                         }
                     }
@@ -218,6 +229,7 @@ namespace FARMACIA.Logica
             }
             return oLista;
         }
+
 
 
         public Compra Obtener(string numerodocumento)
@@ -271,14 +283,13 @@ namespace FARMACIA.Logica
 
             try
             {
-
                 using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
                     conexion.Open();
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdProducto, CodigoProducto, DescripcionProducto, CategoriaProducto,");
-                    query.AppendLine("MedidaProducto, PrecioCompra, PrecioVenta, Cantidad, SubTotal");
-                    query.AppendLine("from DETALLE_COMPRA where IdCompra = @pidCompra");
+                    query.AppendLine("SELECT IdProducto, CodigoProducto, DescripcionProducto, CategoriaProducto,");
+                    query.AppendLine("MedidaProducto, PrecioCompra, PrecioVenta, Cantidad, SubTotal, FechaVencimiento");
+                    query.AppendLine("FROM DETALLE_COMPRA WHERE IdCompra = @pidCompra");
 
                     SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@pidCompra", idCompra));
@@ -298,7 +309,8 @@ namespace FARMACIA.Logica
                                 PrecioCompra = dr["PrecioCompra"].ToString(),
                                 PrecioVenta = dr["PrecioVenta"].ToString(),
                                 Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
-                                SubTotal = dr["SubTotal"].ToString()
+                                SubTotal = dr["SubTotal"].ToString(),
+                                FechaVencimiento = dr["FechaVencimiento"]?.ToString()  
                             });
                         }
                     }
@@ -309,9 +321,9 @@ namespace FARMACIA.Logica
                 oLista = new List<DetalleCompra>();
             }
 
-
             return oLista;
         }
+
 
         public int cancelar_Compra(int id, List<DetalleCompra> odetalle, out string mensaje)
         {

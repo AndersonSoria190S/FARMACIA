@@ -57,6 +57,7 @@
             PrecioCompra = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
+            FechaVencimiento = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
@@ -108,7 +109,7 @@
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = Color.White;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { FechaRegistro, NroDocumento, UsuarioRegistro, Proveedor, MontoTotal, CodigoProd, DescripcionProducto, CategoriaProd, MedidaProducto, PrecioVenta, PrecioCompra, Cantidad, SubTotal });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { FechaRegistro, NroDocumento, UsuarioRegistro, Proveedor, MontoTotal, CodigoProd, DescripcionProducto, CategoriaProd, MedidaProducto, PrecioVenta, PrecioCompra, Cantidad, SubTotal, FechaVencimiento });
             dgvdata.Location = new Point(12, 194);
             dgvdata.Name = "dgvdata";
             dgvdata.RowTemplate.Height = 25;
@@ -343,6 +344,11 @@
             SubTotal.HeaderText = "Sub Total";
             SubTotal.Name = "SubTotal";
             // 
+            // FechaVencimiento
+            // 
+            FechaVencimiento.HeaderText = "Fecha Vencimiento";
+            FechaVencimiento.Name = "FechaVencimiento";
+            // 
             // frmListaCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -407,5 +413,6 @@
         private DataGridViewTextBoxColumn PrecioCompra;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
+        private DataGridViewTextBoxColumn FechaVencimiento;
     }
 }

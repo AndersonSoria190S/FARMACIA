@@ -65,7 +65,8 @@ namespace FARMACIA.Formularios.Compras
                     vr.PrecioVenta,
                     vr.PrecioCompra,
                     vr.Cantidad,
-                    vr.SubTotal
+                    vr.SubTotal,
+                    vr.FechaVencimiento
                 });
             }
         }
@@ -124,7 +125,9 @@ namespace FARMACIA.Formularios.Compras
                             row.Cells[9].Value.ToString(),
                             row.Cells[10].Value.ToString(),
                             row.Cells[11].Value.ToString(),
-                            row.Cells[12].Value.ToString()
+                            row.Cells[12].Value.ToString(),
+                            row.Cells[13].Value.ToString()
+
                         });
                 }
 

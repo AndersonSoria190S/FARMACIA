@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             dgvdata = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            NumeroDocumento = new DataGridViewTextBoxColumn();
+            NombreCompleto = new DataGridViewTextBoxColumn();
+            btneditar = new DataGridViewButtonColumn();
+            btneliminar = new DataGridViewButtonColumn();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             cbobuscar = new ComboBox();
@@ -40,11 +45,6 @@
             panel1 = new Panel();
             btnsalir = new FontAwesome.Sharp.IconButton();
             Usuarios = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            NumeroDocumento = new DataGridViewTextBoxColumn();
-            NombreCompleto = new DataGridViewTextBoxColumn();
-            btneditar = new DataGridViewButtonColumn();
-            btneliminar = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -62,6 +62,44 @@
             dgvdata.TabIndex = 213;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "";
+            Id.Name = "Id";
+            Id.Resizable = DataGridViewTriState.False;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Id.Visible = false;
+            Id.Width = 70;
+            // 
+            // NumeroDocumento
+            // 
+            NumeroDocumento.HeaderText = "Numero Documento";
+            NumeroDocumento.Name = "NumeroDocumento";
+            NumeroDocumento.Resizable = DataGridViewTriState.False;
+            NumeroDocumento.SortMode = DataGridViewColumnSortMode.NotSortable;
+            NumeroDocumento.Width = 200;
+            // 
+            // NombreCompleto
+            // 
+            NombreCompleto.HeaderText = "Nombre Completo";
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.Resizable = DataGridViewTriState.False;
+            NombreCompleto.SortMode = DataGridViewColumnSortMode.NotSortable;
+            NombreCompleto.Width = 200;
+            // 
+            // btneditar
+            // 
+            btneditar.HeaderText = "";
+            btneditar.Name = "btneditar";
+            btneditar.Resizable = DataGridViewTriState.False;
+            btneditar.Width = 35;
+            // 
+            // btneliminar
+            // 
+            btneliminar.HeaderText = "";
+            btneliminar.Name = "btneliminar";
+            btneliminar.Width = 35;
             // 
             // iconButton1
             // 
@@ -200,44 +238,6 @@
             Usuarios.Size = new Size(85, 24);
             Usuarios.TabIndex = 6;
             Usuarios.Text = "Clientes";
-            // 
-            // Id
-            // 
-            Id.HeaderText = "";
-            Id.Name = "Id";
-            Id.Resizable = DataGridViewTriState.False;
-            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Id.Visible = false;
-            Id.Width = 70;
-            // 
-            // NumeroDocumento
-            // 
-            NumeroDocumento.HeaderText = "Numero Documento";
-            NumeroDocumento.Name = "NumeroDocumento";
-            NumeroDocumento.Resizable = DataGridViewTriState.False;
-            NumeroDocumento.SortMode = DataGridViewColumnSortMode.NotSortable;
-            NumeroDocumento.Width = 200;
-            // 
-            // NombreCompleto
-            // 
-            NombreCompleto.HeaderText = "Nombre Completo";
-            NombreCompleto.Name = "NombreCompleto";
-            NombreCompleto.Resizable = DataGridViewTriState.False;
-            NombreCompleto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            NombreCompleto.Width = 200;
-            // 
-            // btneditar
-            // 
-            btneditar.HeaderText = "";
-            btneditar.Name = "btneditar";
-            btneditar.Resizable = DataGridViewTriState.False;
-            btneditar.Width = 35;
-            // 
-            // btneliminar
-            // 
-            btneliminar.HeaderText = "";
-            btneliminar.Name = "btneliminar";
-            btneliminar.Width = 35;
             // 
             // frmClientes
             // 

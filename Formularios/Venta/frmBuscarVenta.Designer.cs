@@ -511,9 +511,9 @@
             Usuarios.ForeColor = SystemColors.ButtonHighlight;
             Usuarios.Location = new Point(14, 18);
             Usuarios.Name = "Usuarios";
-            Usuarios.Size = new Size(153, 24);
+            Usuarios.Size = new Size(134, 24);
             Usuarios.TabIndex = 6;
-            Usuarios.Text = "Buscar Compra";
+            Usuarios.Text = "Buscar Venta";
             // 
             // frmBuscarVenta
             // 

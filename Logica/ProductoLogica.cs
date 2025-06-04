@@ -1,6 +1,7 @@
 ﻿using FARMACIA.Modelo;
 using System.Data.SQLite;
 using System.Text;
+using static NPOI.HSSF.Util.HSSFColor;
 
 namespace FARMACIA.Logica
 {
@@ -35,7 +36,7 @@ namespace FARMACIA.Logica
                 using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
                     conexion.Open();
-                    string query = "SELECT IdProducto, Codigo, Descripcion, Categoria, Medida, Stock, PrecioVenta, PrecioCompra FROM PRODUCTO_FARMACIA;";
+                    string query = "SELECT IdProducto, Codigo, Descripcion, Categoria, Medida, Stock, PrecioVenta, PrecioCompra, FechaVencimiento FROM PRODUCTO_FARMACIA;";
                     SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
 
@@ -52,7 +53,9 @@ namespace FARMACIA.Logica
                                 Medida = dr["Medida"].ToString(),
                                 Stock = Convert.ToInt32(dr["Stock"].ToString()),
                                 PrecioVenta = dr["PrecioVenta"].ToString(),
-                                PrecioCompra = dr["PrecioCompra"].ToString()
+                                PrecioCompra = dr["PrecioCompra"].ToString(),
+                                FechaVencimiento = dr["FechaVencimiento"]?.ToString()
+
                             });
                         }
                     }
@@ -112,6 +115,7 @@ namespace FARMACIA.Logica
                     StringBuilder query = new StringBuilder();
 
                     query.AppendLine("INSERT INTO PRODUCTO_FARMACIA (Codigo, Descripcion, Categoria, Medida) VALUES (@pcodigo, @pdescripcion, @pcategoria, @pmedida);");
+
                     query.AppendLine("SELECT last_insert_rowid();");
 
                     SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
@@ -119,6 +123,7 @@ namespace FARMACIA.Logica
                     cmd.Parameters.Add(new SQLiteParameter("@pdescripcion", objeto.Descripcion));
                     cmd.Parameters.Add(new SQLiteParameter("@pcategoria", objeto.Categoria));
                     cmd.Parameters.Add(new SQLiteParameter("@pmedida", objeto.Medida));
+
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = Convert.ToInt32(cmd.ExecuteScalar().ToString());
@@ -147,7 +152,7 @@ namespace FARMACIA.Logica
                     conexion.Open();
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("UPDATE PRODUCTO_FARMACIA SET Codigo = @pcodigo, Descripcion = @pdescripcion, Categoria = @pcategoria, Medida = @pmedida WHERE IdProducto = @pidproducto");
+                    query.AppendLine("UPDATE PRODUCTO_FARMACIA SET Codigo = @pcodigo, Descripcion = @pdescripcion, Categoria = @pcategoria, Medida = @pmedida WHERE IdProducto = @pidproducto;");
 
                     SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
                     cmd.Parameters.Add(new SQLiteParameter("@pidproducto", objeto.IdProducto));
@@ -155,6 +160,7 @@ namespace FARMACIA.Logica
                     cmd.Parameters.Add(new SQLiteParameter("@pdescripcion", objeto.Descripcion));
                     cmd.Parameters.Add(new SQLiteParameter("@pcategoria", objeto.Categoria));
                     cmd.Parameters.Add(new SQLiteParameter("@pmedida", objeto.Medida));
+
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = cmd.ExecuteNonQuery();

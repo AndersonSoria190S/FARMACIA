@@ -35,6 +35,15 @@
             txtfechainicio = new DateTimePicker();
             groupBox1 = new GroupBox();
             dgvdata = new DataGridView();
+            btnexportar = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            label1 = new Label();
+            cbobuscar = new ComboBox();
+            txtbuscar = new TextBox();
+            btnbuscar = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            Usuarios = new Label();
             FechaRegistro = new DataGridViewTextBoxColumn();
             NroDocumento = new DataGridViewTextBoxColumn();
             UsuarioRegistro = new DataGridViewTextBoxColumn();
@@ -49,15 +58,6 @@
             PrecioVenta = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
-            btnexportar = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            label1 = new Label();
-            cbobuscar = new ComboBox();
-            txtbuscar = new TextBox();
-            btnbuscar = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            Usuarios = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -137,95 +137,6 @@
             dgvdata.RowTemplate.Height = 25;
             dgvdata.Size = new Size(1079, 436);
             dgvdata.TabIndex = 216;
-            // 
-            // FechaRegistro
-            // 
-            FechaRegistro.HeaderText = "Fecha Registro";
-            FechaRegistro.Name = "FechaRegistro";
-            FechaRegistro.Resizable = DataGridViewTriState.False;
-            FechaRegistro.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // NroDocumento
-            // 
-            NroDocumento.HeaderText = "Nro de Documento";
-            NroDocumento.Name = "NroDocumento";
-            NroDocumento.Resizable = DataGridViewTriState.False;
-            NroDocumento.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // UsuarioRegistro
-            // 
-            UsuarioRegistro.HeaderText = "Usuario Registro";
-            UsuarioRegistro.Name = "UsuarioRegistro";
-            UsuarioRegistro.Resizable = DataGridViewTriState.False;
-            UsuarioRegistro.SortMode = DataGridViewColumnSortMode.NotSortable;
-            UsuarioRegistro.Width = 220;
-            // 
-            // Cliente
-            // 
-            Cliente.HeaderText = "Cliente";
-            Cliente.Name = "Cliente";
-            Cliente.Resizable = DataGridViewTriState.False;
-            Cliente.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Cliente.Width = 140;
-            // 
-            // MontoTotal
-            // 
-            MontoTotal.HeaderText = "Monto Total";
-            MontoTotal.Name = "MontoTotal";
-            // 
-            // PagoCon
-            // 
-            PagoCon.HeaderText = "Pago Con";
-            PagoCon.Name = "PagoCon";
-            // 
-            // Cambio
-            // 
-            Cambio.HeaderText = "Cambio";
-            Cambio.Name = "Cambio";
-            // 
-            // CodigoProd
-            // 
-            CodigoProd.HeaderText = "Codigo Producto";
-            CodigoProd.Name = "CodigoProd";
-            CodigoProd.Resizable = DataGridViewTriState.False;
-            CodigoProd.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DescripcionProducto
-            // 
-            DescripcionProducto.HeaderText = "Descripcion Producto";
-            DescripcionProducto.Name = "DescripcionProducto";
-            DescripcionProducto.Resizable = DataGridViewTriState.False;
-            DescripcionProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            DescripcionProducto.Width = 130;
-            // 
-            // CategoriaProd
-            // 
-            CategoriaProd.HeaderText = "Categoria Producto";
-            CategoriaProd.Name = "CategoriaProd";
-            CategoriaProd.Resizable = DataGridViewTriState.False;
-            CategoriaProd.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // MedidaProducto
-            // 
-            MedidaProducto.HeaderText = "Medida Producto";
-            MedidaProducto.Name = "MedidaProducto";
-            MedidaProducto.Resizable = DataGridViewTriState.False;
-            MedidaProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // PrecioVenta
-            // 
-            PrecioVenta.HeaderText = "Precio Venta";
-            PrecioVenta.Name = "PrecioVenta";
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.Name = "Cantidad";
-            // 
-            // SubTotal
-            // 
-            SubTotal.HeaderText = "Sub Total";
-            SubTotal.Name = "SubTotal";
             // 
             // btnexportar
             // 
@@ -345,9 +256,99 @@
             Usuarios.ForeColor = SystemColors.ButtonHighlight;
             Usuarios.Location = new Point(15, 18);
             Usuarios.Name = "Usuarios";
-            Usuarios.Size = new Size(171, 24);
+            Usuarios.Size = new Size(152, 24);
             Usuarios.TabIndex = 6;
-            Usuarios.Text = "LIsta de Compras";
+            Usuarios.Text = "LIsta de Ventas";
+            Usuarios.Click += Usuarios_Click;
+            // 
+            // FechaRegistro
+            // 
+            FechaRegistro.HeaderText = "Fecha Registro";
+            FechaRegistro.Name = "FechaRegistro";
+            FechaRegistro.Resizable = DataGridViewTriState.False;
+            FechaRegistro.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NroDocumento
+            // 
+            NroDocumento.HeaderText = "Nro de Documento";
+            NroDocumento.Name = "NroDocumento";
+            NroDocumento.Resizable = DataGridViewTriState.False;
+            NroDocumento.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // UsuarioRegistro
+            // 
+            UsuarioRegistro.HeaderText = "Usuario Registro";
+            UsuarioRegistro.Name = "UsuarioRegistro";
+            UsuarioRegistro.Resizable = DataGridViewTriState.False;
+            UsuarioRegistro.SortMode = DataGridViewColumnSortMode.NotSortable;
+            UsuarioRegistro.Width = 220;
+            // 
+            // Cliente
+            // 
+            Cliente.HeaderText = "Cliente";
+            Cliente.Name = "Cliente";
+            Cliente.Resizable = DataGridViewTriState.False;
+            Cliente.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Cliente.Width = 140;
+            // 
+            // MontoTotal
+            // 
+            MontoTotal.HeaderText = "Monto Total";
+            MontoTotal.Name = "MontoTotal";
+            // 
+            // PagoCon
+            // 
+            PagoCon.HeaderText = "Pago Con";
+            PagoCon.Name = "PagoCon";
+            // 
+            // Cambio
+            // 
+            Cambio.HeaderText = "Cambio";
+            Cambio.Name = "Cambio";
+            // 
+            // CodigoProd
+            // 
+            CodigoProd.HeaderText = "Codigo Producto";
+            CodigoProd.Name = "CodigoProd";
+            CodigoProd.Resizable = DataGridViewTriState.False;
+            CodigoProd.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DescripcionProducto
+            // 
+            DescripcionProducto.HeaderText = "Descripcion Producto";
+            DescripcionProducto.Name = "DescripcionProducto";
+            DescripcionProducto.Resizable = DataGridViewTriState.False;
+            DescripcionProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
+            DescripcionProducto.Width = 130;
+            // 
+            // CategoriaProd
+            // 
+            CategoriaProd.HeaderText = "Categoria Producto";
+            CategoriaProd.Name = "CategoriaProd";
+            CategoriaProd.Resizable = DataGridViewTriState.False;
+            CategoriaProd.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // MedidaProducto
+            // 
+            MedidaProducto.HeaderText = "Medida Producto";
+            MedidaProducto.Name = "MedidaProducto";
+            MedidaProducto.Resizable = DataGridViewTriState.False;
+            MedidaProducto.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PrecioVenta
+            // 
+            PrecioVenta.HeaderText = "Precio Venta";
+            PrecioVenta.Name = "PrecioVenta";
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.Name = "Cantidad";
+            // 
+            // SubTotal
+            // 
+            SubTotal.HeaderText = "Sub Total";
+            SubTotal.Name = "SubTotal";
             // 
             // frmListaVentas
             // 
@@ -373,7 +374,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmListaVentas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = ".: Lista Compras :.";
+            Text = ".: Lista Ventas :.";
             Load += frmListaVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             panel1.ResumeLayout(false);

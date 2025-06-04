@@ -49,6 +49,7 @@
             PrecioCompra = new DataGridViewTextBoxColumn();
             PrecioVenta = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
+            FechaVencimiento = new DataGridViewTextBoxColumn();
             btneditar = new DataGridViewButtonColumn();
             btneliminar = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
@@ -214,7 +215,7 @@
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = Color.White;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Codigo, Producto, Categoria, Medida, PrecioCompra, PrecioVenta, Stock, btneditar, btneliminar });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Codigo, Producto, Categoria, Medida, PrecioCompra, PrecioVenta, Stock, FechaVencimiento, btneditar, btneliminar });
             dgvdata.Location = new Point(12, 199);
             dgvdata.Name = "dgvdata";
             dgvdata.RowTemplate.Height = 25;
@@ -238,6 +239,7 @@
             Codigo.Name = "Codigo";
             Codigo.Resizable = DataGridViewTriState.False;
             Codigo.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Codigo.Width = 70;
             // 
             // Producto
             // 
@@ -245,7 +247,7 @@
             Producto.Name = "Producto";
             Producto.Resizable = DataGridViewTriState.False;
             Producto.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Producto.Width = 220;
+            Producto.Width = 150;
             // 
             // Categoria
             // 
@@ -283,6 +285,11 @@
             Stock.Name = "Stock";
             Stock.Resizable = DataGridViewTriState.False;
             Stock.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // FechaVencimiento
+            // 
+            FechaVencimiento.HeaderText = "Fecha Vencimiento";
+            FechaVencimiento.Name = "FechaVencimiento";
             // 
             // btneditar
             // 
@@ -351,6 +358,7 @@
         private DataGridViewTextBoxColumn PrecioCompra;
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Stock;
+        private DataGridViewTextBoxColumn FechaVencimiento;
         private DataGridViewButtonColumn btneditar;
         private DataGridViewButtonColumn btneliminar;
     }

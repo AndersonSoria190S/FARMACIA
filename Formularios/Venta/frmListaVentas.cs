@@ -61,7 +61,8 @@ namespace FARMACIA.Formularios.Venta
                     vr.MediadProducto,
                     vr.PrecioVenta,
                     vr.Cantidad,
-                    vr.SubTotal
+                    vr.SubTotal,
+
                 });
             }
         }
@@ -151,6 +152,11 @@ namespace FARMACIA.Formularios.Venta
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Usuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

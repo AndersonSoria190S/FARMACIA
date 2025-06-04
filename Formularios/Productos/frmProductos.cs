@@ -39,7 +39,8 @@ namespace FARMACIA.Formularios.Productos
                     row.Cells[4].Value?.ToString() ?? "",
                     row.Cells[5].Value?.ToString() ?? "",
                     row.Cells[6].Value?.ToString() ?? "",
-                    row.Cells[7].Value?.ToString() ?? ""
+                    row.Cells[7].Value?.ToString() ?? "",
+                    row.Cells[8].Value?.ToString() ?? ""
                 });
 
                 }
@@ -83,6 +84,7 @@ namespace FARMACIA.Formularios.Productos
                     pr.PrecioCompra,
                     pr.PrecioVenta,
                     pr.Stock,
+                    pr.FechaVencimiento,
                     "",
                     "",
                 });
@@ -108,16 +110,18 @@ namespace FARMACIA.Formularios.Productos
                 var result = mdForm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    dgvdata.Rows.Add(new object[] { mdForm._Producto.IdProducto,
-                        mdForm._Producto.Codigo,
-                        mdForm._Producto.Descripcion,
-                        mdForm._Producto.Categoria,
-                        mdForm._Producto.Medida,
-                        "0",
-                        "0",
-                        "0",
-                        "", "" });
-                    btnnuevoproducto.Focus();
+                    dgvdata.Rows.Add(new object[] {
+                    mdForm._Producto.IdProducto,
+                    mdForm._Producto.Codigo,
+                    mdForm._Producto.Descripcion,
+                    mdForm._Producto.Categoria,
+                    mdForm._Producto.Medida,
+                    "0",
+                    "0",
+                    "0",
+                    mdForm._Producto.FechaVencimiento,
+                    ""
+                    });
                 }
             }
         }
@@ -208,7 +212,7 @@ namespace FARMACIA.Formularios.Productos
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -220,7 +224,7 @@ namespace FARMACIA.Formularios.Productos
                 e.Graphics.DrawImage(Properties.Resources.edit16, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            if (e.ColumnIndex == 9)
+            if (e.ColumnIndex == 10)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 

@@ -261,6 +261,7 @@ namespace FARMACIA.Formularios.Compras
                 precioventa.ToString("0.00"),
                 preciocompra.ToString("0.00"),
                 subtotal.ToString("0.00"),
+                dtpfechavencimiento.Value.ToString("yyyy-MM-dd"),
                 ""
             });
 
@@ -321,6 +322,13 @@ namespace FARMACIA.Formularios.Compras
                 return;
             }
 
+            if (dtpfechavencimiento.Value.Date <= DateTime.Today)
+            {
+                MessageBox.Show("La fecha de vencimiento debe ser posterior a hoy", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             string mensaje = string.Empty;
             int cantidad_productos = 0;
             int idcorrelativo = CompraLogica.Instancia.ObtenerCorrelativo(out mensaje);
@@ -338,11 +346,11 @@ namespace FARMACIA.Formularios.Compras
                     Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value.ToString()),
                     PrecioVenta = row.Cells["PrecioVenta"].Value.ToString(),
                     PrecioCompra = row.Cells["PrecioCompra"].Value.ToString(),
-                    SubTotal = row.Cells["SubTotal"].Value.ToString()
+                    SubTotal = row.Cells["SubTotal"].Value.ToString(),
+                    FechaVencimiento = row.Cells["FechaVencimiento"].Value?.ToString()
                 });
-
-                cantidad_productos += Convert.ToInt32(row.Cells["Cantidad"].Value.ToString());
             }
+
 
             Compra oEntrada = new Compra()
             {
@@ -393,6 +401,16 @@ namespace FARMACIA.Formularios.Compras
                 e.Graphics.DrawImage(Properties.Resources.delete17, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtfechafin_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
