@@ -191,6 +191,7 @@
             groupBox1.Size = new Size(690, 180);
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnagregarproducto
             // 
@@ -240,6 +241,7 @@
             // 
             txtprecioventa.Location = new Point(272, 147);
             txtprecioventa.Name = "txtprecioventa";
+            txtprecioventa.ReadOnly = true;
             txtprecioventa.Size = new Size(106, 23);
             txtprecioventa.TabIndex = 216;
             txtprecioventa.KeyPress += txtprecioventa_KeyPress;
@@ -318,10 +320,13 @@
             // txtcantidad
             // 
             txtcantidad.Location = new Point(17, 147);
+            txtcantidad.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             txtcantidad.Name = "txtcantidad";
             txtcantidad.Size = new Size(133, 23);
             txtcantidad.TabIndex = 208;
             txtcantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            txtcantidad.ValueChanged += txtcantidad_ValueChanged;
+            txtcantidad.KeyPress += txtcantidad_KeyPress;
             // 
             // txtcodproducto
             // 
@@ -468,6 +473,7 @@
             // 
             btneliminar.HeaderText = "";
             btneliminar.Name = "btneliminar";
+            btneliminar.Text = "Eliminar";
             btneliminar.Width = 35;
             // 
             // txttotalpagar
@@ -539,6 +545,7 @@
             txtpagocon.Name = "txtpagocon";
             txtpagocon.Size = new Size(78, 23);
             txtpagocon.TabIndex = 220;
+            txtpagocon.TextChanged += txtpagocon_TextChanged;
             txtpagocon.KeyDown += txtpagocon_KeyDown;
             txtpagocon.KeyPress += txtpagocon_KeyPress;
             // 
@@ -559,6 +566,7 @@
             txtcambio.Size = new Size(84, 23);
             txtcambio.TabIndex = 222;
             txtcambio.TextAlign = HorizontalAlignment.Center;
+            txtcambio.TextChanged += txtcambio_TextChanged;
             // 
             // frmNuevaVenta
             // 

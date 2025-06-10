@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FARMACIA.Modelo;
 using System.Data.SQLite;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using FARMACIA.Modelo;
 
 namespace FARMACIA.Logica
 {
@@ -134,7 +130,7 @@ namespace FARMACIA.Logica
                             de.PrecioVenta,
                             de.Cantidad,
                             de.SubTotal,
-                            de.FechaVencimiento 
+                            de.FechaVencimiento
                         ));
 
                         query.AppendLine(string.Format(
@@ -310,7 +306,7 @@ namespace FARMACIA.Logica
                                 PrecioVenta = dr["PrecioVenta"].ToString(),
                                 Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
                                 SubTotal = dr["SubTotal"].ToString(),
-                                FechaVencimiento = dr["FechaVencimiento"]?.ToString()  
+                                FechaVencimiento = dr["FechaVencimiento"]?.ToString()
                             });
                         }
                     }

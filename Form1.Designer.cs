@@ -57,7 +57,7 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(572, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(72, 58);
+            pictureBox2.Size = new Size(72, 81);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -66,6 +66,7 @@
             // button1
             // 
             button1.BackgroundImage = Properties.Resources._288131666_5152367421513190_7345227237005028619_n;
+            button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.Window;
@@ -106,7 +107,7 @@
             // 
             // txtusuario
             // 
-            txtusuario.Cursor = Cursors.Hand;
+            txtusuario.Cursor = Cursors.IBeam;
             txtusuario.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtusuario.Location = new Point(339, 113);
             txtusuario.Name = "txtusuario";
@@ -127,6 +128,7 @@
             // txtclave
             // 
             txtclave.AccessibleRole = AccessibleRole.None;
+            txtclave.Cursor = Cursors.IBeam;
             txtclave.ImeMode = ImeMode.NoControl;
             txtclave.Location = new Point(339, 176);
             txtclave.Name = "txtclave";

@@ -35,6 +35,13 @@
             groupBox1 = new GroupBox();
             btnnuevousuario = new FontAwesome.Sharp.IconButton();
             dgvdata = new DataGridView();
+            bindingSource1 = new BindingSource(components);
+            btnbuscar = new FontAwesome.Sharp.IconButton();
+            txtbuscar = new TextBox();
+            cbobuscar = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             Id = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
             NombreCompleto = new DataGridViewTextBoxColumn();
@@ -43,13 +50,6 @@
             Clave = new DataGridViewTextBoxColumn();
             btneditar = new DataGridViewButtonColumn();
             btneliminar = new DataGridViewButtonColumn();
-            bindingSource1 = new BindingSource(components);
-            btnbuscar = new FontAwesome.Sharp.IconButton();
-            txtbuscar = new TextBox();
-            cbobuscar = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -122,6 +122,7 @@
             // 
             // dgvdata
             // 
+            dgvdata.AllowUserToAddRows = false;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { Id, Usuario, NombreCompleto, IdRol, Rol, Clave, btneditar, btneliminar });
             dgvdata.Location = new Point(18, 161);
@@ -131,55 +132,6 @@
             dgvdata.TabIndex = 3;
             dgvdata.CellContentClick += dataGridView1_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            // 
-            // Usuario
-            // 
-            Usuario.HeaderText = "Usuario";
-            Usuario.Name = "Usuario";
-            // 
-            // NombreCompleto
-            // 
-            NombreCompleto.HeaderText = "Nombre Completo";
-            NombreCompleto.Name = "NombreCompleto";
-            NombreCompleto.Width = 150;
-            // 
-            // IdRol
-            // 
-            IdRol.HeaderText = "IdRol";
-            IdRol.Name = "IdRol";
-            IdRol.Resizable = DataGridViewTriState.False;
-            IdRol.Visible = false;
-            // 
-            // Rol
-            // 
-            Rol.HeaderText = "Rol";
-            Rol.Name = "Rol";
-            Rol.Visible = false;
-            // 
-            // Clave
-            // 
-            Clave.HeaderText = "Clave";
-            Clave.Name = "Clave";
-            Clave.Visible = false;
-            // 
-            // btneditar
-            // 
-            btneditar.HeaderText = "";
-            btneditar.Name = "btneditar";
-            btneditar.Resizable = DataGridViewTriState.True;
-            btneditar.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // btneliminar
-            // 
-            btneliminar.HeaderText = "";
-            btneliminar.Name = "btneliminar";
-            btneliminar.Resizable = DataGridViewTriState.True;
-            btneliminar.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // btnbuscar
             // 
@@ -246,6 +198,55 @@
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
             // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            // 
+            // Usuario
+            // 
+            Usuario.HeaderText = "Usuario";
+            Usuario.Name = "Usuario";
+            // 
+            // NombreCompleto
+            // 
+            NombreCompleto.HeaderText = "Nombre Completo";
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.Width = 160;
+            // 
+            // IdRol
+            // 
+            IdRol.HeaderText = "IdRol";
+            IdRol.Name = "IdRol";
+            IdRol.Resizable = DataGridViewTriState.False;
+            IdRol.Visible = false;
+            // 
+            // Rol
+            // 
+            Rol.HeaderText = "Rol";
+            Rol.Name = "Rol";
+            Rol.Visible = false;
+            // 
+            // Clave
+            // 
+            Clave.HeaderText = "Clave";
+            Clave.Name = "Clave";
+            Clave.Visible = false;
+            // 
+            // btneditar
+            // 
+            btneditar.HeaderText = "";
+            btneditar.Name = "btneditar";
+            btneditar.Resizable = DataGridViewTriState.True;
+            btneditar.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // btneliminar
+            // 
+            btneliminar.HeaderText = "";
+            btneliminar.Name = "btneliminar";
+            btneliminar.Resizable = DataGridViewTriState.True;
+            btneliminar.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -288,6 +289,9 @@
         private TextBox txtbuscar;
         private ComboBox cbobuscar;
         private Label label1;
+        private Label label2;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnsalir;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Usuario;
         private DataGridViewTextBoxColumn NombreCompleto;
@@ -296,8 +300,5 @@
         private DataGridViewTextBoxColumn Clave;
         private DataGridViewButtonColumn btneditar;
         private DataGridViewButtonColumn btneliminar;
-        private Label label2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnsalir;
     }
 }

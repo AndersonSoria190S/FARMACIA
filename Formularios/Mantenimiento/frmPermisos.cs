@@ -26,43 +26,17 @@ namespace FARMACIA.Formularios.Mantenimiento
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            int _a_ventas = 0;
-            int _a_compras = 0;
-            int _a_productos = 0;
-            int _a_clientes = 0;
-            int _a_proveedores = 0;
-            int _a_mantenimiento = 0;
-
-            if (a_ventas.Checked)
-                _a_ventas = 1;
-
-            if (a_compras.Checked)
-                _a_compras = 1;
-
-            if (a_productos.Checked)
-                _a_productos = 1;
-
-            if (a_clientes.Checked)
-                _a_clientes = 1;
-
-            if (a_proveedores.Checked)
-                _a_proveedores = 1;
-
-            if (a_mantenimiento.Checked)
-                _a_mantenimiento = 1;
-
-
             string mensaje = string.Empty;
 
             int operaciones = PermisosLogica.Instancia.Guardar(new Modelo.Permisos()
             {
                 IdPermisos = 1,
-                Ventas = _a_ventas,
-                Compras = _a_compras,
-                Productos = _a_productos,
-                Clientes = _a_clientes,
-                Proveedores = _a_proveedores,
-                Mantenimiento = _a_mantenimiento
+                Ventas = 1,
+                Compras = 1,
+                Productos = 1,
+                Clientes = 1,
+                Proveedores = 1,
+                Mantenimiento = 1
             }, out mensaje);
 
             if (operaciones < 1)
@@ -71,8 +45,9 @@ namespace FARMACIA.Formularios.Mantenimiento
             }
             else
             {
-                MessageBox.Show("Se guardaron los cambios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se guardaron los permisos del administrador (todos activos)", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -131,12 +106,19 @@ namespace FARMACIA.Formularios.Mantenimiento
             Modelo.Permisos padmin = PermisosLogica.Instancia.Obtener(1);
             Modelo.Permisos pemple = PermisosLogica.Instancia.Obtener(2);
 
-            a_ventas.Checked = padmin.Ventas == 1 ? true : false;
-            a_compras.Checked = padmin.Compras == 1 ? true : false;
-            a_productos.Checked = padmin.Productos == 1 ? true : false;
-            a_clientes.Checked = padmin.Clientes == 1 ? true : false;
-            a_proveedores.Checked = padmin.Proveedores == 1 ? true : false;
-            a_mantenimiento.Checked = padmin.Mantenimiento == 1 ? true : false;
+            a_ventas.Checked = true;
+            a_compras.Checked = true;
+            a_productos.Checked = true;
+            a_clientes.Checked = true;
+            a_proveedores.Checked = true;
+            a_mantenimiento.Checked = true;
+
+            a_ventas.Enabled = false;
+            a_compras.Enabled = false;
+            a_productos.Enabled = false;
+            a_clientes.Enabled = false;
+            a_proveedores.Enabled = false;
+            a_mantenimiento.Enabled = false;
 
             e_ventas.Checked = pemple.Ventas == 1 ? true : false;
             e_compras.Checked = pemple.Compras == 1 ? true : false;

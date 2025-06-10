@@ -111,6 +111,7 @@
             Controls.Add(label9);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "mdVentaExitosa";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Mensaje :.";
             Load += mdVentaExitosa_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

@@ -73,6 +73,9 @@
     <Compile Update="Formularios\Proveedores\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Reportes\frmReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Venta\frmBuscarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +89,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Intermedios\IMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="mdAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

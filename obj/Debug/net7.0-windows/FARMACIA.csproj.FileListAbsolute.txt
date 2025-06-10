@@ -162,3 +162,5 @@ C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.genrunti
 C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\ref\FARMACIA.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\WinForms.DataVisualization.Utilities.dll
 C:\Users\USER\Desktop\FARMAC\FARMACIA\bin\Debug\net7.0-windows\WinForms.DataVisualization.dll
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.Formularios.Reportes.frmReporte.resources
+C:\Users\USER\Desktop\FARMAC\FARMACIA\obj\Debug\net7.0-windows\FARMACIA.mdAcercaDe.resources

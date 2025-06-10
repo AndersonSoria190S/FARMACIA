@@ -1,7 +1,6 @@
 ﻿using FARMACIA.Modelo;
 using System.Data.SQLite;
 using System.Text;
-using static NPOI.HSSF.Util.HSSFColor;
 
 namespace FARMACIA.Logica
 {

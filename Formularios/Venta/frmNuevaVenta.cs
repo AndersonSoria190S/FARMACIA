@@ -1,19 +1,14 @@
 ﻿using FARMACIA.Formularios.Modales;
 using FARMACIA.Logica;
 using FARMACIA.Modelo;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using iTextSharp.text;
+using System.Drawing;
+
 
 
 
@@ -184,11 +179,16 @@ namespace FARMACIA.Formularios.Venta
 
             decimal precioventa = 0;
             decimal subtotal = 0;
-            if (!decimal.TryParse(_producto.PrecioVenta, out precioventa))
+
+            _producto.PrecioVenta = _producto.PrecioVenta.Replace(",", ".");
+
+            // Intenta convertir con cultura invariante
+            if (!decimal.TryParse(_producto.PrecioVenta, NumberStyles.Any, CultureInfo.InvariantCulture, out precioventa))
             {
-                MessageBox.Show("Error al convertir internamente el tipo de moneda - Precio Venta\nEjemplo Formato ##.##", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Error al convertir el precio de venta (verifica el formato: ##.##)", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
             string mensaje = string.Empty;
             int operaciones = VentaLogica.Instancia.reducirStock(_producto.IdProducto, Convert.ToInt32(txtcantidad.Value.ToString()), out mensaje);
 
@@ -203,8 +203,9 @@ namespace FARMACIA.Formularios.Venta
                     _producto.Categoria,
                     _producto.Medida,
                     txtcantidad.Value.ToString(),
-                    precioventa.ToString("0.00"),
-                    subtotal.ToString("0.00")
+                    precioventa.ToString("N2", CultureInfo.InvariantCulture),
+                    subtotal.ToString("N2", CultureInfo.InvariantCulture)
+
                 });
 
                 calcularTotal();
@@ -230,11 +231,15 @@ namespace FARMACIA.Formularios.Venta
             {
                 foreach (DataGridViewRow row in dgvdata.Rows)
                 {
-                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
+                    if (decimal.TryParse(row.Cells["SubTotal"].Value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal subtotal))
+                    {
+                        total += subtotal;
+                    }
                 }
             }
-            txttotalpagar.Text = total.ToString("0.00");
+            txttotalpagar.Text = total.ToString("N2", CultureInfo.InvariantCulture);
         }
+
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -250,7 +255,8 @@ namespace FARMACIA.Formularios.Venta
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                // e.Graphics.DrawImage(Properties.Resources.delete17, new Rectangle(x, y, w, h));
+                //e.Graphics.DrawImage(Properties.Resources.delete17, new Rectangle(x, y, w, h));
+
                 e.Handled = true;
             }
         }
@@ -332,6 +338,12 @@ namespace FARMACIA.Formularios.Venta
             }
 
             calcularcambio();
+
+            // Convertir correctamente los montos con punto decimal
+            decimal montoTotal = decimal.Parse(txttotalpagar.Text.Trim().Replace(",", "."), CultureInfo.InvariantCulture);
+            decimal pagoCon = decimal.Parse(txtpagocon.Text.Trim().Replace(",", "."), CultureInfo.InvariantCulture);
+            decimal cambio = decimal.Parse(txtcambio.Text.Trim().Replace(",", "."), CultureInfo.InvariantCulture);
+
             FARMACIA.Modelo.Venta oSalida = new FARMACIA.Modelo.Venta()
             {
                 NumeroDocumento = String.Format("{0:00000}", idcorrelativo),
@@ -340,11 +352,12 @@ namespace FARMACIA.Formularios.Venta
                 DocumentoCliente = txtdoccliente.Text,
                 NombreCliente = txtnombrecliente.Text,
                 CantidadProductos = cantidad_productos,
-                MontoTotal = txttotalpagar.Text,
-                PagoCon = Convert.ToDecimal(txtpagocon.Text.Trim()).ToString("0.00"),
-                Cambio = Convert.ToDecimal(txtcambio.Text.Trim()).ToString("0.00"),
+                MontoTotal = montoTotal.ToString("0.00", CultureInfo.InvariantCulture),
+                PagoCon = pagoCon.ToString("0.00", CultureInfo.InvariantCulture),
+                Cambio = cambio.ToString("0.00", CultureInfo.InvariantCulture),
                 olistaDetalle = olista
             };
+
 
 
             int operaciones = VentaLogica.Instancia.Registrar(oSalida, out mensaje);
@@ -471,34 +484,34 @@ namespace FARMACIA.Formularios.Venta
         }
         private void calcularcambio()
         {
-            if (txttotalpagar.Text.Trim() == "")
+            if (string.IsNullOrWhiteSpace(txttotalpagar.Text))
             {
                 MessageBox.Show("No existen productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            decimal pagacon;
-            decimal total = Convert.ToDecimal(txttotalpagar.Text);
+            // Normalizar los valores
+            string totalTexto = txttotalpagar.Text.Replace(",", ".");
+            string pagoTexto = txtpagocon.Text.Replace(",", ".");
 
-            if (txtpagocon.Text.Trim() == "")
+            if (string.IsNullOrWhiteSpace(pagoTexto))
             {
-                txtpagocon.Text = "0";
+                pagoTexto = "0";
+                txtpagocon.Text = "0.00";
             }
 
-
-            if (decimal.TryParse(txtpagocon.Text.Trim(), out pagacon))
+            if (decimal.TryParse(totalTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal total) &&
+                decimal.TryParse(pagoTexto, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal pagacon))
             {
-                if (pagacon < total)
-                {
-                    txtcambio.Text = "0.00";
-                }
-                else
-                {
-                    decimal cambio = pagacon - total;
-                    txtcambio.Text = cambio.ToString("0.00");
-                }
+                decimal cambio = pagacon - total;
+                txtcambio.Text = (cambio < 0 ? 0 : cambio).ToString("N2", CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                MessageBox.Show("Error al calcular el cambio. Verifica los importes ingresados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void txtpagocon_KeyDown(object sender, KeyEventArgs e)
         {
@@ -506,6 +519,37 @@ namespace FARMACIA.Formularios.Venta
             {
                 calcularcambio();
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcantidad_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-')
+            {
+                e.Handled = true; // bloquea el carácter
+
+                // muestra el mensaje
+                MessageBox.Show("No se permiten valores negativos.", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtpagocon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcambio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

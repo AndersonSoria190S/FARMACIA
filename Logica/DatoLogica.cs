@@ -1,10 +1,6 @@
 ﻿using FARMACIA.Modelo;
-using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace FARMACIA.Logica
 {
@@ -57,7 +53,7 @@ namespace FARMACIA.Logica
             }
             catch (Exception ex)
             {
-                obj = new Datos(); 
+                obj = new Datos();
             }
             return obj;
         }

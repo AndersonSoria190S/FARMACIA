@@ -1,16 +1,7 @@
-﻿using FARMACIA.Modelo;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using FARMACIA.Herramientas;
-using FARMACIA.Formularios.Modales;
+﻿using FARMACIA.Formularios.Modales;
 using FARMACIA.Logica;
+using FARMACIA.Modelo;
+using System.Data;
 using System.Globalization;
 
 namespace FARMACIA.Formularios.Compras

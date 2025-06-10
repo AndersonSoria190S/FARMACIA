@@ -1,17 +1,8 @@
 ﻿using FARMACIA.Logica;
 using FARMACIA.Modelo;
-using iTextSharp.text.pdf;
 using iTextSharp.text;
+using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Globalization;
 
 namespace FARMACIA.Formularios.Compras

@@ -47,31 +47,43 @@ namespace FARMACIA
             this.Close();
         }
 
+        private int intentosFallidos = 0;
+
         private void button1_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
             bool encontrado = false;
 
-            if (txtusuario.Text == "administrador" && txtclave.Text == "13579123")
+            if (string.IsNullOrWhiteSpace(txtusuario.Text) || string.IsNullOrWhiteSpace(txtclave.Text))
+            {
+                MessageBox.Show("Por favor, ingresa el usuario y la contraseña.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string usuarioIngresado = txtusuario.Text.Trim();
+            string claveIngresada = txtclave.Text.Trim();
+
+            if (usuarioIngresado == "administrador" && claveIngresada == "13579123")
             {
                 int respuesta = UsuarioLogica.Instancia.resetear();
                 if (respuesta > 0)
                 {
                     MessageBox.Show("La cuenta fue restablecida", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    intentosFallidos = 0;
                 }
             }
             else
             {
-
                 List<Usuario> ouser = UsuarioLogica.Instancia.Listar(out mensaje);
-                encontrado = ouser.Any(u => u.NombreUsuario == txtusuario.Text && u.Clave == txtclave.Text);
+                encontrado = ouser.Any(u => u.NombreUsuario == usuarioIngresado && u.Clave == claveIngresada);
 
                 if (encontrado)
                 {
-                    Usuario objuser = ouser.Where(u => u.NombreUsuario == txtusuario.Text && u.Clave == txtclave.Text).FirstOrDefault();
+                    Usuario objuser = ouser.FirstOrDefault(u => u.NombreUsuario == usuarioIngresado && u.Clave == claveIngresada);
+
+                    
 
                     Inicio frm = new Inicio();
-
                     frm.NombreUsuario = objuser.NombreUsuario;
                     frm.Clave = objuser.Clave;
                     frm.NombreCompleto = objuser.NombreCompleto;
@@ -80,20 +92,25 @@ namespace FARMACIA
                     frm.Show();
                     this.Hide();
                     frm.FormClosing += Frm_Closing;
+                    intentosFallidos = 0;
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(mensaje))
+                    intentosFallidos++;
+
+                    if (intentosFallidos >= 3)
                     {
-                        MessageBox.Show("No se encontraron coincidencias del usuario", "Mensaje C.E.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Has superado el número máximo de intentos. La aplicación se cerrará.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        Application.Exit();
                     }
                     else
                     {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        int restantes = 3 - intentosFallidos;
+                        MessageBox.Show($"No se encontraron coincidencias del usuario. Intentos restantes: {restantes}", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-
                 }
             }
+
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)

@@ -201,6 +201,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "mdClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Clientes :.";
             Load += mdClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();

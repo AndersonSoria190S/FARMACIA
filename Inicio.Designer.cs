@@ -104,10 +104,10 @@
             menuMantenimiento.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuMantenimiento.IconSize = 80;
             menuMantenimiento.ImageAlign = ContentAlignment.TopCenter;
-            menuMantenimiento.Location = new Point(475, 291);
+            menuMantenimiento.Location = new Point(457, 291);
             menuMantenimiento.Margin = new Padding(1);
             menuMantenimiento.Name = "menuMantenimiento";
-            menuMantenimiento.Size = new Size(117, 91);
+            menuMantenimiento.Size = new Size(136, 112);
             menuMantenimiento.TabIndex = 2;
             menuMantenimiento.Text = "Mantenimiento";
             menuMantenimiento.TextAlign = ContentAlignment.BottomCenter;
@@ -168,6 +168,7 @@
             iconButton1.Size = new Size(53, 53);
             iconButton1.TabIndex = 4;
             iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click_1;
             // 
             // menuClientes
             // 
@@ -180,10 +181,10 @@
             menuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuClientes.IconSize = 80;
             menuClientes.ImageAlign = ContentAlignment.TopCenter;
-            menuClientes.Location = new Point(213, 150);
+            menuClientes.Location = new Point(193, 150);
             menuClientes.Margin = new Padding(1);
             menuClientes.Name = "menuClientes";
-            menuClientes.Size = new Size(117, 91);
+            menuClientes.Size = new Size(137, 106);
             menuClientes.TabIndex = 12;
             menuClientes.Text = "Clientes";
             menuClientes.TextAlign = ContentAlignment.BottomCenter;
@@ -201,10 +202,10 @@
             menuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuCompras.IconSize = 80;
             menuCompras.ImageAlign = ContentAlignment.TopCenter;
-            menuCompras.Location = new Point(384, 150);
+            menuCompras.Location = new Point(360, 150);
             menuCompras.Margin = new Padding(1);
             menuCompras.Name = "menuCompras";
-            menuCompras.Size = new Size(117, 91);
+            menuCompras.Size = new Size(141, 106);
             menuCompras.TabIndex = 13;
             menuCompras.Text = "Compras";
             menuCompras.TextAlign = ContentAlignment.BottomCenter;
@@ -222,14 +223,15 @@
             menuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuReportes.IconSize = 70;
             menuReportes.ImageAlign = ContentAlignment.TopCenter;
-            menuReportes.Location = new Point(297, 291);
+            menuReportes.Location = new Point(286, 291);
             menuReportes.Margin = new Padding(1);
             menuReportes.Name = "menuReportes";
-            menuReportes.Size = new Size(117, 91);
+            menuReportes.Size = new Size(138, 112);
             menuReportes.TabIndex = 16;
             menuReportes.Text = "Reportes";
             menuReportes.TextAlign = ContentAlignment.BottomCenter;
             menuReportes.UseVisualStyleBackColor = false;
+            menuReportes.Click += menuReportes_Click;
             // 
             // menuVentas
             // 
@@ -242,10 +244,10 @@
             menuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuVentas.IconSize = 80;
             menuVentas.ImageAlign = ContentAlignment.TopCenter;
-            menuVentas.Location = new Point(50, 150);
+            menuVentas.Location = new Point(30, 150);
             menuVentas.Margin = new Padding(1);
             menuVentas.Name = "menuVentas";
-            menuVentas.Size = new Size(117, 91);
+            menuVentas.Size = new Size(137, 106);
             menuVentas.TabIndex = 15;
             menuVentas.Text = "Ventas";
             menuVentas.TextAlign = ContentAlignment.BottomCenter;
@@ -263,10 +265,10 @@
             menuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuProductos.IconSize = 70;
             menuProductos.ImageAlign = ContentAlignment.TopCenter;
-            menuProductos.Location = new Point(129, 291);
+            menuProductos.Location = new Point(109, 291);
             menuProductos.Margin = new Padding(1);
             menuProductos.Name = "menuProductos";
-            menuProductos.Size = new Size(117, 91);
+            menuProductos.Size = new Size(137, 112);
             menuProductos.TabIndex = 14;
             menuProductos.Text = "Productos Farmacia";
             menuProductos.TextAlign = ContentAlignment.BottomCenter;
@@ -284,10 +286,10 @@
             menuProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             menuProveedores.IconSize = 70;
             menuProveedores.ImageAlign = ContentAlignment.TopCenter;
-            menuProveedores.Location = new Point(549, 150);
+            menuProveedores.Location = new Point(527, 150);
             menuProveedores.Margin = new Padding(1);
             menuProveedores.Name = "menuProveedores";
-            menuProveedores.Size = new Size(117, 91);
+            menuProveedores.Size = new Size(139, 106);
             menuProveedores.TabIndex = 17;
             menuProveedores.Text = "Proveedores";
             menuProveedores.TextAlign = ContentAlignment.BottomCenter;
@@ -297,7 +299,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-9, 198);
+            pictureBox2.Location = new Point(-9, 195);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(734, 132);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -308,7 +310,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(221, 242, 255);
             ClientSize = new Size(725, 485);
             ControlBox = false;
             Controls.Add(menuProveedores);
@@ -322,6 +324,7 @@
             Controls.Add(statusStrip1);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Inicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Inicio :.";
